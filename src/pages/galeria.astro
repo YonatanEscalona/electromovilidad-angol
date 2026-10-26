@@ -1,0 +1,570 @@
+---
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import BotonWhatsApp from '../components/BotonWhatsApp.astro';
+import Icono from '../components/Icono.astro';
+import { negocio, linkWhatsApp } from '../data/negocio';
+import {
+  fotosGaleria,
+  videosGaleria,
+  categoriasGaleria,
+} from '../data/galeria';
+
+const titulo = `Galería de Proyectos — ${negocio.nombre} en ${negocio.direccion.comuna}`;
+const descripcion =
+  'Galería de infraestructura de carga eléctrica en ' +
+  negocio.direccion.comuna +
+  ': cargadores, canalizaciones, tableros y conexiones. Imágenes referenciales.';
+---
+
+<Base titulo={titulo} descripcion={descripcion}>
+  <Header temaInicial="oscuro" />
+
+  <main id="contenido" class="pt-24 lg:pt-28 pb-20 overflow-hidden relative">
+    <!-- Luces de fondo limpias sin cuadrícula -->
+    <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[400px] bg-azul-600/15 blur-[140px] rounded-full" aria-hidden="true" />
+    <div class="pointer-events-none absolute top-[40%] right-0 w-[500px] h-[500px] bg-naranjo-500/10 blur-[150px] rounded-full" aria-hidden="true" />
+
+    <div class="contenedor relative z-10">
+      <!-- Breadcrumb / Migas de pan -->
+      <nav class="flex items-center gap-2 text-xs text-humo-200/60 mb-6" aria-label="Ruta de navegación">
+        <a href="/" class="hover:text-naranjo-400 transition-colors flex items-center gap-1">
+          <span>Inicio</span>
+        </a>
+        <span>/</span>
+        <span class="text-white font-medium">Galería de Proyectos</span>
+      </nav>
+
+      <!-- Encabezado de Página Principal -->
+      <header class="mx-auto max-w-4xl text-center">
+        <div class="inline-flex items-center gap-2 rounded-full border border-naranjo-400/30 bg-naranjo-400/10 px-4 py-1.5 text-xs font-bold tracking-[0.2em] text-naranjo-400 uppercase shadow-inner">
+          <span class="size-2 rounded-full bg-naranjo-400 animate-pulse"></span>
+          Electromovilidad · Imágenes Referenciales
+        </div>
+
+        <h1 class="mt-4 text-[clamp(2.2rem,5vw,3.75rem)] font-display font-extrabold text-white leading-tight">
+          Galería de Proyectos, <span class="texto-destacado">Soluciones Integrales</span>
+        </h1>
+
+        <p class="mx-auto mt-4 max-w-2xl text-base text-humo-200/85 sm:text-lg leading-relaxed">
+          Explora detalles de infraestructura de carga: equipos, canalizaciones, conexiones y protecciones. Imágenes referenciales creadas con IA; no corresponden a obras ejecutadas.
+        </p>
+
+        <!-- Métricas Rápidas de Confianza -->
+        <div class="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-humo-100">
+          <div class="flex items-center gap-2 rounded-xl bg-navy-900/80 border border-white/10 px-4 py-2 backdrop-blur-md">
+            <Icono nombre="camara" class="size-4 text-naranjo-400" />
+            <span><strong class="text-white font-bold">{fotosGaleria.length}</strong> Imágenes de referencia</span>
+          </div>
+          <div hidden class="flex items-center gap-2 rounded-xl bg-navy-900/80 border border-white/10 px-4 py-2 backdrop-blur-md">
+            <Icono nombre="video" class="size-4 text-naranjo-400" />
+            <span><strong class="text-white font-bold">{videosGaleria.length}</strong> Videos disponibles</span>
+          </div>
+          <div class="flex items-center gap-2 rounded-xl bg-navy-900/80 border border-white/10 px-4 py-2 backdrop-blur-md">
+            <Icono nombre="verificado" class="size-4 text-azul-400" />
+            <span>Soluciones de carga a medida</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- Barra de Filtros Interactivos -->
+      <nav
+        class="mt-12 sticky top-20 z-40 py-3 -mx-4 px-4 sm:mx-0 sm:px-0 bg-navy-950/90 backdrop-blur-xl border-y border-white/10 transition-all duration-300"
+        aria-label="Filtrar por especialidad técnica"
+        data-filtros-galeria
+      >
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 sm:flex-wrap sm:justify-center no-scrollbar">
+          {
+            categoriasGaleria.map((cat, idx) => (
+              <button
+                type="button"
+                data-filtro={cat.id}
+                class:list={[
+                  'cursor-pointer shrink-0 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 sm:text-sm flex items-center gap-2 focus-visible:outline-none select-none',
+                  idx === 0
+                    ? 'bg-azul-600 text-white shadow-lg shadow-azul-600/30 border border-azul-500'
+                    : 'bg-navy-900/90 text-humo-200/80 border border-white/10 hover:border-naranjo-400/40 hover:text-white hover:bg-navy-800',
+                ]}
+              >
+                {cat.id === 'videos' && <Icono nombre="play" class="size-3 text-naranjo-400" />}
+                <span>{cat.label}</span>
+                <span class="inline-block rounded-full bg-white/10 px-1.5 py-0.2 text-[10px] font-bold">
+                  {cat.conteo}
+                </span>
+              </button>
+            ))
+          }
+        </div>
+      </nav>
+
+      <!-- SECCIÓN DE VIDEOS DESTACADOS EN TALLER -->
+      {videosGaleria.length > 0 && <section class="mt-12" data-seccion-videos aria-labelledby="titulo-videos-taller">
+        <div class="flex items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-2.5">
+            <span class="flex size-7 items-center justify-center rounded-lg bg-naranjo-400/20 text-naranjo-400 border border-naranjo-400/30">
+              <Icono nombre="video" class="size-4" />
+            </span>
+            <h2 id="titulo-videos-taller" class="text-xl sm:text-2xl font-bold text-white">
+              Videos de Reparaciones & Diagnóstico
+            </h2>
+          </div>
+          <span class="text-xs text-humo-200/60 hidden sm:inline">
+            Sonido directo de taller · Clic para reproducir
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" data-lista-videos>
+          {
+            videosGaleria.map((v) => (
+              <article class="tarjeta-borde relative overflow-hidden rounded-2xl bg-navy-900 border border-white/12 shadow-xl group flex flex-col justify-between" data-item-video data-categoria="videos">
+                <!-- Contenedor del reproductor de video -->
+                <div class="relative bg-black aspect-video overflow-hidden flex items-center justify-center">
+                  <video
+                    src={v.src}
+                    poster={v.poster}
+                    controls
+                    playsinline
+                    preload="metadata"
+                    class="w-full h-full object-contain max-h-[380px]"
+                    aria-label={v.alt}
+                  >
+                    Tu navegador no soporta reproducción de video HTML5.
+                  </video>
+                  
+                  <span class="absolute top-3 right-3 z-10 inline-flex items-center gap-1 rounded-md border border-white/20 bg-navy-950/80 px-2 py-0.5 text-[11px] font-mono font-medium text-white backdrop-blur-md pointer-events-none">
+                    <Icono nombre="reloj" class="size-3 text-naranjo-400" />
+                    {v.duracion}
+                  </span>
+                </div>
+
+                <!-- Datos técnicos del video -->
+                <div class="p-5 sm:p-6 flex flex-col justify-between flex-1">
+                  <div>
+                    <div class="flex items-center gap-2 mb-2">
+                      <span class="inline-flex items-center gap-1 rounded border border-naranjo-400/30 bg-naranjo-400/10 px-2 py-0.5 text-[10px] font-mono font-semibold text-naranjo-400 uppercase">
+                        {v.tag}
+                      </span>
+                      <span class="text-[11px] text-humo-200/50">Registro en Taller</span>
+                    </div>
+
+                    <h3 class="text-base sm:text-lg font-bold text-white leading-snug group-hover:text-naranjo-300 transition-colors">
+                      {v.titulo}
+                    </h3>
+
+                    <p class="mt-2 text-xs sm:text-sm text-humo-200/75 leading-relaxed">
+                      {v.resumen}
+                    </p>
+                  </div>
+
+                  <div class="mt-5 pt-4 border-t border-white/8 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                    <span class="text-[11px] text-humo-200/60 flex items-center gap-1.5">
+                      <Icono nombre="escudo" class="size-3.5 text-naranjo-400 shrink-0" />
+                      Diagnóstico documentado con video
+                    </span>
+
+                    <a
+                      href={linkWhatsApp(`Hola Soluciones Integrales, quiero consultar por ${v.titulo}.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center justify-center gap-1.5 rounded-xl bg-azul-600/90 hover:bg-azul-500 text-white px-3.5 py-2 text-xs font-bold transition-all shadow-md active:scale-98"
+                    >
+                      <Icono nombre="whatsapp" class="size-3.5" />
+                      <span>Consultar por WhatsApp</span>
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+        </div>
+      </section>}
+
+      <!-- GRILLA COMPLETA DE FOTOGRAFÍAS TÉCNICAS -->
+      <section class="mt-14" data-seccion-fotos aria-labelledby="titulo-fotos-taller">
+        <div class="flex items-center justify-between gap-4 mb-6">
+          <div class="flex items-center gap-2.5">
+            <span class="flex size-7 items-center justify-center rounded-lg bg-azul-600/20 text-naranjo-400 border border-azul-500/30">
+              <Icono nombre="camara" class="size-4" />
+            </span>
+            <h2 id="titulo-fotos-taller" class="text-xl sm:text-2xl font-bold text-white">
+              Cargadores e Infraestructura Eléctrica
+            </h2>
+          </div>
+          <span class="text-xs text-humo-200/60 hidden sm:inline">
+            Toca o haz clic para inspeccionar detalles
+          </span>
+        </div>
+
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5" data-grilla-galeria>
+          {
+            fotosGaleria.map((t) => (
+              <li
+                class="group relative transition-all duration-500"
+                data-categoria={t.categoria}
+              >
+                <button
+                  type="button"
+                  class="w-full h-full text-left cursor-pointer focus-visible:ring-2 focus-visible:ring-naranjo-400 focus-visible:outline-none rounded-2xl block"
+                  data-abrir-modal-foto
+                  data-id={t.id}
+                  data-titulo={t.titulo}
+                  data-categoria-label={t.categoriaLabel}
+                  data-resumen={t.resumen}
+                  data-tag={t.tag}
+                  data-src={t.img.src}
+                  data-alt={t.alt}
+                  aria-label={`Ver fotografía ampliada de: ${t.titulo}`}
+                >
+                  <figure class="tarjeta-borde relative h-full min-h-[290px] overflow-hidden rounded-2xl bg-navy-900 group-hover:border-naranjo-400/50 transition-all duration-500 shadow-lg group-hover:shadow-azul-600/10 flex flex-col justify-end">
+                    <!-- Imagen real a todo color con zoom suave -->
+                    <Image
+                      src={t.img}
+                      alt={t.alt}
+                      widths={[360, 640, 960]}
+                      sizes="(min-width: 1280px) 280px, (min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                      class="absolute inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
+                      loading="lazy"
+                    />
+
+                    <!-- Gradiente para legibilidad -->
+                    <div
+                      class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/50 to-transparent transition-opacity duration-500 group-hover:opacity-80"
+                      aria-hidden="true"
+                    />
+
+                    <!-- Badges superiores -->
+                    <div class="absolute inset-x-0 top-0 flex items-center justify-between p-3.5">
+                      <span class="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-navy-950/85 px-2.5 py-1 text-[10px] font-semibold tracking-wider text-humo-100 uppercase backdrop-blur-md">
+                        <span class="size-1.5 rounded-full bg-naranjo-400" />
+                        {t.categoriaLabel}
+                      </span>
+
+                      <span class="flex size-7 items-center justify-center rounded-full border border-white/20 bg-navy-950/80 text-humo-200 transition-all duration-300 group-hover:border-naranjo-400 group-hover:bg-naranjo-400 group-hover:text-navy-950 backdrop-blur-md shadow-md">
+                        <Icono nombre="lupa" class="size-3.5" />
+                      </span>
+                    </div>
+
+                    <!-- Ficha inferior del trabajo -->
+                    <figcaption class="relative z-10 p-4 sm:p-5">
+                      <div class="flex items-center gap-2 mb-1.5">
+                        <span class="inline-block rounded border border-naranjo-400/30 bg-naranjo-400/10 px-2 py-0.5 text-[10px] font-mono font-medium text-naranjo-300">
+                          {t.tag}
+                        </span>
+                      </div>
+
+                      <h3 class="text-sm font-bold text-white leading-snug group-hover:text-denim-300 transition-colors duration-300">
+                        {t.titulo}
+                      </h3>
+
+                      <p class="mt-1.5 text-xs text-humo-200/75 line-clamp-2 leading-relaxed">
+                        {t.resumen}
+                      </p>
+
+                      <div class="mt-3 flex items-center gap-1 text-[11px] font-semibold text-naranjo-400 opacity-0 transform translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
+                        <span>Inspeccionar fotografía</span>
+                        <Icono nombre="flecha" class="size-3" />
+                      </div>
+                    </figcaption>
+                  </figure>
+                </button>
+              </li>
+            ))
+          }
+        </ul>
+      </section>
+
+      <!-- BANNER DE CONFIANZA & REGISTRO FOTOGRÁFICO A WHATSAPP -->
+      <section class="mt-16 rounded-3xl border border-white/12 bg-gradient-to-br from-navy-900 via-navy-900/90 to-navy-950 p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        <div class="pointer-events-none absolute -right-20 -bottom-20 w-80 h-80 bg-naranjo-500/10 blur-[100px] rounded-full" />
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-8">
+            <div class="inline-flex items-center gap-2 rounded-full border border-naranjo-400/30 bg-naranjo-400/10 px-3 py-1 text-xs font-bold text-naranjo-400 uppercase mb-3">
+              <Icono nombre="escudo" class="size-3.5" />
+              Soluciones Integrales
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-display font-black text-white">
+              ¿Necesitas un punto de carga en tu casa o empresa?
+            </h2>
+
+            <p class="mt-3 text-sm sm:text-base text-humo-200/80 leading-relaxed max-w-2xl">
+              Evaluamos tu vehículo y la capacidad del empalme, diseñamos la instalación y gestionamos la declaración TE-6 ante la SEC. Escríbenos para coordinar una visita técnica.
+            </p>
+          </div>
+
+          <div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-3 justify-center">
+            <a
+              href={linkWhatsApp('Hola Soluciones Integrales, quiero cotizar una instalación de carga eléctrica.')}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full flex items-center justify-center gap-2.5 rounded-2xl bg-naranjo-500 hover:bg-naranjo-400 text-navy-950 hover:text-navy-950 px-6 py-4 font-display text-base font-extrabold shadow-xl shadow-naranjo-500/25 transition-all duration-300 hover:scale-102 active:scale-98"
+            >
+              <Icono nombre="whatsapp" class="size-5 text-navy-950" />
+              <span>Cotizar por WhatsApp</span>
+            </a>
+
+            <a
+              href="/"
+              class="w-full flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 text-white px-5 py-3.5 text-xs sm:text-sm font-semibold transition-colors"
+            >
+              <span>Volver a la Página Principal</span>
+              <Icono nombre="flecha" class="size-4 text-naranjo-400" />
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- MODAL / LIGHTBOX DE INSPECCIÓN TÉCNICA -->
+    <div
+      id="modal-galeria-hd"
+      class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 opacity-0 pointer-events-none transition-opacity duration-300"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-hd-titulo"
+      hidden
+    >
+      <!-- Fondo oscuro difuminado -->
+      <div class="absolute inset-0 bg-navy-950/92 backdrop-blur-xl transition-opacity" data-cerrar-modal />
+
+      <!-- Contenedor del Modal -->
+      <div class="tarjeta-borde relative z-10 w-full max-w-4xl overflow-hidden rounded-2xl bg-navy-900 shadow-2xl border border-white/15 transform scale-95 transition-transform duration-300">
+        <!-- Botón Cerrar -->
+        <button
+          type="button"
+          class="cursor-pointer absolute top-4 right-4 z-20 flex size-9 items-center justify-center rounded-full bg-navy-950/85 text-white border border-white/20 hover:bg-naranjo-500 hover:text-navy-950 hover:border-naranjo-400 transition-colors focus-visible:ring-2 focus-visible:ring-naranjo-400"
+          data-cerrar-modal
+          aria-label="Cerrar visor"
+        >
+          <Icono nombre="cerrar" class="size-4" />
+        </button>
+
+        <!-- Cuerpo del Modal -->
+        <div class="grid grid-cols-1 md:grid-cols-12 max-h-[88vh] overflow-y-auto">
+          <!-- Imagen Ampliada HD -->
+          <div class="relative bg-navy-950 md:col-span-7 flex items-center justify-center min-h-[280px] sm:min-h-[420px] p-3">
+            <img
+              id="modal-hd-imagen"
+              src=""
+              alt=""
+              class="max-h-[60vh] w-full object-contain rounded-xl shadow-inner"
+            />
+          </div>
+
+          <!-- Ficha Técnica y CTA de Cotización -->
+          <div class="flex flex-col justify-between p-6 sm:p-7 md:col-span-5 bg-navy-900 border-t md:border-t-0 md:border-l border-white/10">
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span id="modal-hd-categoria" class="inline-flex items-center gap-1.5 rounded-md border border-white/15 bg-navy-950 px-2.5 py-1 text-[11px] font-semibold text-naranjo-400 uppercase">
+                  <!-- JS inserta categoría -->
+                </span>
+                <span id="modal-hd-tag" class="rounded border border-naranjo-400/30 bg-naranjo-400/10 px-2 py-0.5 text-[10px] font-mono text-naranjo-300">
+                  <!-- JS inserta tag -->
+                </span>
+              </div>
+
+              <h3 id="modal-hd-titulo" class="text-xl font-bold text-white leading-snug">
+                <!-- JS inserta título -->
+              </h3>
+
+              <p id="modal-hd-resumen" class="mt-3 text-xs sm:text-sm text-humo-200/80 leading-relaxed">
+                <!-- JS inserta resumen -->
+              </p>
+
+              <div class="mt-5 rounded-2xl border border-white/10 bg-navy-950/80 p-4">
+                <div class="flex items-center gap-2 text-xs font-semibold text-white">
+                  <Icono nombre="escudo" class="size-4 text-naranjo-400 shrink-0" />
+                  <span>Soluciones Integrales</span>
+                </div>
+                <ul class="mt-2 space-y-1.5 text-[11px] text-humo-200/70">
+                  <li class="flex items-center gap-1.5">
+                    <Icono nombre="check" class="size-3 text-verde-400 shrink-0" />
+                    <span>Infraestructura adaptada a tu instalación eléctrica</span>
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <Icono nombre="check" class="size-3 text-verde-400 shrink-0" />
+                    <span>Protecciones y equipamiento según proyecto</span>
+                  </li>
+                  <li class="flex items-center gap-1.5">
+                    <Icono nombre="check" class="size-3 text-verde-400 shrink-0" />
+                    <span>Imagen referencial creada con IA</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="mt-6 pt-5 border-t border-white/10">
+              <a
+                id="modal-hd-whatsapp-link"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="w-full flex items-center justify-center gap-2 rounded-xl bg-azul-600 hover:bg-azul-500 text-white px-4 py-3.5 text-xs sm:text-sm font-bold shadow-lg shadow-azul-600/30 transition-all duration-300 active:scale-98"
+              >
+                <Icono nombre="whatsapp" class="size-4" />
+                <span>Cotizar este trabajo por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+  <BotonWhatsApp />
+</Base>
+
+<script>
+  function iniciarGaleriaCompleta() {
+    // ── 1. FILTROS DE CATEGORÍA ──────────────────────────────────
+    const botonesFiltro = document.querySelectorAll<HTMLButtonElement>('[data-filtros-galeria] [data-filtro]');
+    const tarjetasFotos = document.querySelectorAll<HTMLElement>('[data-grilla-galeria] > li');
+    const seccionVideos = document.querySelector<HTMLElement>('[data-seccion-videos]');
+    const seccionFotos = document.querySelector<HTMLElement>('[data-seccion-fotos]');
+
+    botonesFiltro.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const filtro = btn.dataset.filtro;
+
+        // Actualizar estilo visual de botones
+        botonesFiltro.forEach((b) => {
+          const activo = b === btn;
+          if (activo) {
+            b.className = 'cursor-pointer shrink-0 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 sm:text-sm flex items-center gap-2 focus-visible:outline-none select-none bg-azul-600 text-white shadow-lg shadow-azul-600/30 border border-azul-500';
+          } else {
+            b.className = 'cursor-pointer shrink-0 rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 sm:text-sm flex items-center gap-2 focus-visible:outline-none select-none bg-navy-900/90 text-humo-200/80 border border-white/10 hover:border-naranjo-400/40 hover:text-white hover:bg-navy-800';
+          }
+        });
+
+        // Manejar visibilidad de sección de videos
+        if (seccionVideos) {
+          if (filtro === 'todos' || filtro === 'videos') {
+            seccionVideos.style.display = '';
+          } else {
+            seccionVideos.style.display = 'none';
+          }
+        }
+
+        // Manejar visibilidad de sección de fotos
+        if (seccionFotos) {
+          if (filtro === 'videos') {
+            seccionFotos.style.display = 'none';
+          } else {
+            seccionFotos.style.display = '';
+          }
+        }
+
+        // Filtrar fotografías
+        tarjetasFotos.forEach((tarjeta) => {
+          const categoria = tarjeta.dataset.categoria;
+          const coincide = filtro === 'todos' || categoria === filtro;
+
+          if (coincide) {
+            tarjeta.style.display = '';
+            setTimeout(() => {
+              tarjeta.style.opacity = '1';
+              tarjeta.style.transform = 'scale(1)';
+            }, 10);
+          } else {
+            tarjeta.style.opacity = '0';
+            tarjeta.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              tarjeta.style.display = 'none';
+            }, 250);
+          }
+        });
+      });
+    });
+
+    // ── 2. GESTIÓN DE REPRODUCCIÓN DE VIDEOS ───────────────────────
+    const videos = document.querySelectorAll<HTMLVideoElement>('[data-seccion-videos] video');
+    videos.forEach((vid) => {
+      vid.addEventListener('play', () => {
+        videos.forEach((otroVid) => {
+          if (otroVid !== vid && !otroVid.paused) {
+            otroVid.pause();
+          }
+        });
+      });
+    });
+
+    // ── 3. MODAL / LIGHTBOX DE INSPECCIÓN FOTOGRÁFICA ─────────────
+    const modal = document.getElementById('modal-galeria-hd');
+    const modalImg = document.getElementById('modal-hd-imagen') as HTMLImageElement | null;
+    const modalTitulo = document.getElementById('modal-hd-titulo');
+    const modalCategoria = document.getElementById('modal-hd-categoria');
+    const modalResumen = document.getElementById('modal-hd-resumen');
+    const modalTag = document.getElementById('modal-hd-tag');
+    const modalWaLink = document.getElementById('modal-hd-whatsapp-link') as HTMLAnchorElement | null;
+    const botonesCerrar = document.querySelectorAll('[data-cerrar-modal]');
+    const disparadoresModal = document.querySelectorAll<HTMLButtonElement>('[data-abrir-modal-foto]');
+
+    if (!modal || !modalImg || !modalTitulo || !modalCategoria || !modalResumen || !modalTag || !modalWaLink) return;
+
+    const abrirModal = (btn: HTMLButtonElement) => {
+      const src = btn.dataset.src ?? '';
+      const alt = btn.dataset.alt ?? '';
+      const titulo = btn.dataset.titulo ?? '';
+      const categoriaLabel = btn.dataset.categoriaLabel ?? '';
+      const resumen = btn.dataset.resumen ?? '';
+      const tag = btn.dataset.tag ?? '';
+
+      modalImg.src = src;
+      modalImg.alt = alt;
+      modalTitulo.textContent = titulo;
+      modalCategoria.textContent = categoriaLabel;
+      modalResumen.textContent = resumen;
+      modalTag.textContent = tag;
+
+      // Mensaje dinámico de WhatsApp para cotizar este trabajo específico
+      const textoWa = `Hola Soluciones Integrales, vi en su galería la foto de "${titulo}" (${tag}) y me gustaría cotizar una instalación.`;
+      modalWaLink.href = `https://wa.me/56935172731?text=${encodeURIComponent(textoWa)}`;
+
+      modal.hidden = false;
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(() => {
+        modal.classList.remove('opacity-0', 'pointer-events-none');
+        const interior = modal.querySelector('.tarjeta-borde');
+        interior?.classList.remove('scale-95');
+        interior?.classList.add('scale-100');
+      });
+    };
+
+    const cerrarModal = () => {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      const interior = modal.querySelector('.tarjeta-borde');
+      interior?.classList.remove('scale-100');
+      interior?.classList.add('scale-95');
+
+      setTimeout(() => {
+        modal.hidden = true;
+        document.body.style.overflow = '';
+      }, 300);
+    };
+
+    disparadoresModal.forEach((btn) => {
+      btn.addEventListener('click', () => abrirModal(btn));
+    });
+
+    botonesCerrar.forEach((btn) => {
+      btn.addEventListener('click', cerrarModal);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.hidden) {
+        cerrarModal();
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', iniciarGaleriaCompleta);
+  } else {
+    iniciarGaleriaCompleta();
+  }
+</script>

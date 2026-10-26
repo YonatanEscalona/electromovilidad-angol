@@ -1,0 +1,37 @@
+---
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Servicios from '../components/Servicios.astro';
+import PorQueElegirnos from '../components/PorQueElegirnos.astro';
+import Domicilio from '../components/Domicilio.astro';
+import Trabajos from '../components/Trabajos.astro';
+import ResenasGoogle from '../components/ResenasGoogle.astro';
+import Faq from '../components/Faq.astro';
+import Footer from '../components/Footer.astro';
+import BotonWhatsApp from '../components/BotonWhatsApp.astro';
+
+const titulo = 'Soluciones Integrales — Electromovilidad en La Araucanía';
+const descripcion = 'Instalación de cargadores eléctricos en Angol y La Araucanía. Soluciones llave en mano para hogares y empresas, tableros y tramitación TE-6 ante la SEC.';
+
+---
+
+<Base titulo={titulo} descripcion={descripcion}>
+  <Header />
+  <main id="contenido">
+    <Hero />
+    <Servicios />
+    <PorQueElegirnos />
+    <Domicilio />
+    <Trabajos />
+    <ResenasGoogle />
+    <Faq />
+  </main>
+  <Footer />
+  <BotonWhatsApp />
+</Base>
+
+<script>
+  import '../scripts/animaciones';
+  import '../scripts/compartir';
+</script>

@@ -1,0 +1,220 @@
+---
+import { Image } from 'astro:assets';
+import gato from '../assets/marca.svg';
+import { negocio, linkWhatsApp } from '../data/negocio';
+import Icono from './Icono.astro';
+
+interface Props {
+  temaInicial?: 'claro' | 'oscuro';
+}
+
+const { temaInicial } = Astro.props;
+// La página de inicio tiene hero claro (#fdfdfd); las demás páginas (como galería) tienen fondo oscuro (#060911)
+const esPaginaInicio = Astro.url.pathname === '/' || Astro.url.pathname === '';
+const esTemaClaro = temaInicial !== undefined ? temaInicial === 'claro' : esPaginaInicio;
+
+const enlaces = [
+  { href: '/#servicios', texto: 'Servicios' },
+  { href: '/#por-que-elegirnos', texto: 'Nuestro proceso' },
+  { href: '/galeria', texto: 'Galería' },
+  { href: '/#opiniones', texto: 'Soluciones' },
+  { href: '/#preguntas', texto: 'Preguntas' },
+];
+---
+
+<header
+  id="cabecera"
+  class:list={[
+    "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter,border-color] duration-300",
+    esTemaClaro
+      ? "cabecera-clara"
+      : "bg-navy-950/85 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/25"
+  ]}
+  data-cabecera
+  data-hero-claro={esTemaClaro ? "true" : "false"}
+>
+  <div class="contenedor flex h-20 items-center justify-between gap-4">
+    <a href="/" class="group flex items-center gap-2.5 sm:gap-3" aria-label={`${negocio.nombre} — inicio`}>
+      <Image
+        src={gato}
+        alt="Soluciones Integrales"
+        width={48}
+        height={48}
+        class="h-11 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+        loading="eager"
+      />
+      <span class="font-display text-2xl sm:text-[1.7rem] font-black tracking-tight text-white uppercase transition-colors">
+        <span class="block text-[0.8em] leading-none">SOLUCIONES</span><span class="block text-[0.8em] leading-none text-naranjo-400">INTEGRALES</span>
+      </span>
+    </a>
+
+    <nav aria-label="Principal" class="hidden lg:block">
+      <ul class="flex items-center gap-1">
+        {
+          enlaces.map((e) => (
+            <li>
+              <a
+                href={e.href}
+                class="relative rounded-lg px-3 py-2 text-sm font-medium text-humo-200 transition-colors hover:text-white after:absolute after:inset-x-3 after:-bottom-0.5 after:h-0.5 after:origin-left after:scale-x-0 after:bg-naranjo-400 after:transition-transform after:duration-300 hover:after:scale-x-100"
+              >
+                {e.texto}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <a
+        href={linkWhatsApp()}
+        target="_blank"
+        rel="noopener"
+        class="hidden items-center gap-2 rounded-full bg-naranjo-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950 hover:shadow-naranjo-500/40 sm:inline-flex"
+      >
+        <Icono nombre="whatsapp" class="size-[18px]" />
+        Solicitar Visita
+      </a>
+
+      <button
+        type="button"
+        data-abrir-menu
+        aria-expanded="false"
+        aria-controls="menu-movil"
+        class="grid size-11 place-items-center rounded-xl border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10 lg:hidden"
+      >
+        <span class="sr-only">Abrir menú</span>
+        <Icono nombre="menu" class="size-6" />
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Menú móvil -->
+<div
+  id="menu-movil"
+  data-menu-movil
+  hidden
+  class="fixed inset-0 z-[60] overflow-y-auto overscroll-contain bg-navy-950/95 pb-[env(safe-area-inset-bottom,0px)] backdrop-blur-xl lg:hidden"
+>
+  <div class="contenedor flex h-20 items-center justify-between">
+    <a href="/" class="flex items-center gap-2.5">
+      <Image
+        src={gato}
+        alt="Soluciones Integrales"
+        width={40}
+        height={40}
+        class="h-10 w-auto object-contain"
+      />
+      <span class="font-display text-xl font-black text-white uppercase">
+        <span class="block text-[0.8em] leading-none">SOLUCIONES</span><span class="block text-[0.8em] leading-none text-naranjo-400">INTEGRALES</span>
+      </span>
+    </a>
+    <button
+      type="button"
+      data-cerrar-menu
+      class="grid size-11 place-items-center rounded-xl border border-white/15 bg-white/5 text-white transition-colors hover:bg-white/10"
+    >
+      <span class="sr-only">Cerrar menú</span>
+      <Icono nombre="cerrar" class="size-6" />
+    </button>
+  </div>
+
+  <nav aria-label="Menú móvil" class="contenedor mt-6">
+    <ul class="flex flex-col gap-1">
+      {
+        enlaces.map((e) => (
+          <li>
+            <a
+              href={e.href}
+              data-enlace-movil
+              class="flex items-center justify-between rounded-2xl border border-white/8 bg-white/[0.03] px-5 py-4 font-display text-xl font-bold text-white transition-colors hover:border-naranjo-400/40 hover:bg-white/[0.07]"
+            >
+              {e.texto}
+              <Icono nombre="flecha" class="size-5 text-naranjo-400" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+
+    <a
+      href={linkWhatsApp()}
+      target="_blank"
+      rel="noopener"
+      class="mt-6 flex items-center justify-center gap-2 rounded-full bg-naranjo-500 px-6 py-4 font-display text-lg font-extrabold text-white shadow-lg shadow-naranjo-500/25"
+    >
+      <Icono nombre="whatsapp" class="size-5" />
+      Escribir por WhatsApp
+    </a>
+
+    <a
+      href={`tel:${negocio.telefono}`}
+      class="mt-3 flex items-center justify-center gap-2 rounded-full border border-white/15 px-6 py-4 font-semibold text-white"
+    >
+      <Icono nombre="telefono" class="size-5 text-naranjo-400" />
+      {negocio.telefonoVisible}
+    </a>
+  </nav>
+</div>
+
+<script>
+  function setupHeaderAndMenu() {
+    // Cabecera scroll
+    const cabecera = document.querySelector<HTMLElement>('[data-cabecera]');
+    if (cabecera) {
+      const esHeroClaro = cabecera.getAttribute('data-hero-claro') === 'true';
+      const clasesOscura = ['bg-navy-950/85', 'backdrop-blur-xl', 'shadow-lg', 'shadow-black/25', 'border-b', 'border-white/10'];
+
+      const actualizarCabecera = () => {
+        const activa = window.scrollY > 40;
+        if (esHeroClaro) {
+          clasesOscura.forEach((c) => cabecera.classList.toggle(c, activa));
+          cabecera.classList.toggle('cabecera-clara', !activa);
+        } else {
+          clasesOscura.forEach((c) => cabecera.classList.add(c));
+          cabecera.classList.remove('cabecera-clara');
+        }
+      };
+
+      actualizarCabecera();
+      window.addEventListener('scroll', actualizarCabecera, { passive: true });
+    }
+
+    // Menú móvil
+    const abrir = document.querySelector<HTMLButtonElement>('[data-abrir-menu]');
+    const cerrar = document.querySelector<HTMLButtonElement>('[data-cerrar-menu]');
+    const menu = document.querySelector<HTMLElement>('[data-menu-movil]');
+
+    if (abrir && cerrar && menu) {
+      const enlaces = menu.querySelectorAll<HTMLAnchorElement>('[data-enlace-movil], a');
+
+      const mostrar = () => {
+        menu.hidden = false;
+        abrir.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        cerrar.focus();
+      };
+
+      const ocultar = () => {
+        menu.hidden = true;
+        abrir.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        abrir.focus();
+      };
+
+      abrir.addEventListener('click', mostrar);
+      cerrar.addEventListener('click', ocultar);
+      enlaces.forEach((a) => a.addEventListener('click', ocultar));
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menu.hidden) ocultar();
+      });
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupHeaderAndMenu);
+  } else {
+    setupHeaderAndMenu();
+  }
+</script>

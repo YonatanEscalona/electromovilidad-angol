@@ -1,0 +1,152 @@
+---
+import { Image } from 'astro:assets';
+import gato from '../assets/marca.svg';
+import { negocio, servicios } from '../data/negocio';
+import Icono from './Icono.astro';
+
+const anio = new Date().getFullYear();
+const redes = [
+  { nombre: 'instagram', href: negocio.redes.instagram, etiqueta: 'Instagram' },
+  { nombre: 'facebook', href: negocio.redes.facebook, etiqueta: 'Facebook' },
+].filter((r) => r.href);
+---
+
+<footer id="contacto" class="relative border-t border-white/8 bg-navy-950 pt-16 pb-8">
+  <div class="contenedor">
+    <div class="grid gap-10 lg:grid-cols-12 lg:gap-8">
+      <!-- Marca -->
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-3">
+          <Image
+            src={gato}
+            alt="Soluciones Integrales"
+            width={48}
+            height={48}
+            class="h-12 w-auto object-contain"
+            loading="lazy"
+          />
+          <span class="leading-none">
+            <span class="block font-display text-2xl font-black tracking-tight text-white uppercase">
+              SOLUCIONES <span class="text-naranjo-400">INTEGRALES</span>
+            </span>
+            <span class="mt-1 block text-[11px] font-semibold tracking-[0.2em] text-denim-300 uppercase">
+              Electromovilidad
+            </span>
+          </span>
+        </div>
+
+        <p class="mt-5 max-w-sm text-sm leading-relaxed text-humo-200/70">
+          {negocio.descripcion}
+        </p>
+        <button type="button" data-compartir-whatsapp class="mt-5 inline-flex items-center gap-2 py-2 text-sm font-semibold text-naranjo-400"><Icono nombre="whatsapp" class="size-5" />Compartir página por WhatsApp</button>
+
+        {
+          redes.length > 0 && (
+            <ul class="mt-6 flex gap-2">
+              {redes.map((r) => (
+                <li>
+                  <a
+                    href={r.href}
+                    target="_blank"
+                    rel="noopener"
+                    class="grid size-10 place-items-center rounded-xl border border-white/10 text-humo-200 transition-colors hover:border-naranjo-400/40 hover:text-naranjo-400"
+                  >
+                    <span class="sr-only">{r.etiqueta}</span>
+                    <Icono nombre={r.nombre} class="size-5" />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )
+        }
+      </div>
+
+      <!-- Servicios & Galería -->
+      <nav class="lg:col-span-3" aria-labelledby="pie-servicios">
+        <h2 id="pie-servicios" class="text-sm font-bold tracking-wide text-white uppercase">
+          Servicios Principales
+        </h2>
+        <ul class="mt-3 space-y-1">
+          <li>
+            <a
+              href="/galeria"
+              class="inline-flex items-center gap-1.5 py-1 text-sm font-semibold text-naranjo-400 transition-colors hover:text-naranjo-300"
+            >
+              <span>Galería de Proyectos</span>
+              <span class="rounded bg-naranjo-400/20 px-1.5 py-0.2 text-[10px] font-bold">10</span>
+            </a>
+          </li>
+          {
+            servicios.map((s) => (
+              <li>
+                <a
+                  href={`/#servicios`}
+                  class="inline-block py-1 text-sm text-humo-200/70 transition-colors hover:text-naranjo-400"
+                >
+                  {s.titulo}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+
+      <!-- Contacto -->
+      <div class="lg:col-span-5">
+        <h2 class="text-sm font-bold tracking-wide text-white uppercase">Contacto Comercial</h2>
+
+        <ul class="mt-5 space-y-4">
+          <li>
+            <a
+              href={`tel:${negocio.telefono}`}
+              class="group flex items-start gap-3 text-humo-200/80 transition-colors hover:text-white"
+            >
+              <span class="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-naranjo-500/12 text-naranjo-400">
+                <Icono nombre="telefono" class="size-4" />
+              </span>
+              <span>
+                <span class="block text-sm font-semibold">{negocio.telefonoVisible}</span>
+                <span class="block text-xs text-humo-200/55">Llamadas y WhatsApp</span>
+              </span>
+            </a>
+          </li>
+
+          <li class="flex items-start gap-3 text-humo-200/80">
+            <span class="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-naranjo-500/12 text-naranjo-400">
+              <Icono nombre="ubicacion" class="size-4" />
+            </span>
+            <span>
+              <span class="block text-sm font-semibold">
+                {negocio.direccion.calle}, {negocio.direccion.comuna}
+              </span>
+              <span class="block text-xs text-humo-200/55">{negocio.direccion.region}</span>
+            </span>
+          </li>
+
+          <li class="flex items-start gap-3 text-humo-200/80">
+            <span class="mt-0.5 grid size-9 shrink-0 place-items-center rounded-xl bg-naranjo-500/12 text-naranjo-400">
+              <Icono nombre="correo" class="size-4" />
+            </span>
+            <span class="space-y-1">
+              <span class="block text-sm">RUT: {negocio.rut}</span>
+              <a class="block text-sm break-all hover:text-naranjo-400" href={`mailto:${negocio.email}`}>{negocio.email}</a>
+              <a class="block text-sm break-all hover:text-naranjo-400" href={`mailto:${negocio.emailAlternativo}`}>{negocio.emailAlternativo}</a>
+              <a class="block text-sm break-all hover:text-naranjo-400" href={`https://${negocio.web}`} target="_blank" rel="noopener">{negocio.web}</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div
+      class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/8 pt-7 sm:flex-row"
+    >
+      <p class="text-xs text-humo-200/65">
+        © {anio} {negocio.nombre}. Todos los derechos reservados.
+      </p>
+      <p class="text-xs text-humo-200/65">
+        {negocio.direccion.comuna}, Chile · Electromovilidad en La Araucanía
+      </p>
+    </div>
+  </div>
+</footer>

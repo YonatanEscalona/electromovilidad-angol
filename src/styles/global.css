@@ -1,0 +1,312 @@
+@import 'tailwindcss';
+
+/* ───────────────────────────────────────────────
+   TOKENS DE MARCA — PALETA AZUL COBALTO & NEGRO CARBÓN
+   Estilo Motorsport / Taller Automotriz de Alta Precisión
+   ─────────────────────────────────────────────── */
+@theme {
+  /* ── Fondos Negro Asfalto & Carbón Profundo ── */
+  --color-navy-950: #060911;
+  --color-navy-900: #0c1220;
+  --color-navy-800: #131b2e;
+  --color-navy-700: #1a253d;
+  --color-navy-600: #202f4d;
+  --color-navy-500: #283b61;
+  --color-denim-400: #38bdf8;
+  --color-denim-300: #70c4ff;
+
+  /* ── Azules de Taller & Hero ── */
+  --color-azul-900: #07152e;
+  --color-azul-700: #1042a0;
+  --color-azul-600: #1d63ed;
+  --color-azul-500: #3b82f6;
+  --color-pizarra-600: #64748b;
+  --color-pizarra-800: #1e293b;
+
+  /* ── Acentos: Cobalto Eléctrico & Cian Técnico ── */
+  --color-naranjo-600: #154ec2;
+  --color-naranjo-500: #1d63ed;
+  --color-naranjo-400: #38bdf8;
+  --color-naranjo-300: #70c4ff;
+
+  /* ── Textos de Alta Legibilidad ── */
+  --color-humo-50: #ffffff;
+  --color-humo-100: #f8fafc;
+  --color-humo-200: #cbd5e1;
+
+  --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --ease-salida: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ───────────────────────────────────────────────
+   BASE
+   ─────────────────────────────────────────────── */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    /* La página es oscura por diseño: que los controles nativos lo sepan */
+    color-scheme: dark;
+  }
+
+  /* Sin retardo de 300 ms ni destello gris al tocar en móvil */
+  a,
+  button,
+  summary,
+  [role='button'] {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Lenis maneja el scroll; desactivamos el nativo cuando está activo */
+  html.lenis,
+  html.lenis body {
+    height: auto;
+  }
+  .lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+  }
+
+  body {
+    background-color: var(--color-navy-950);
+    color: var(--color-humo-100);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1.05;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Foco visible y consistente en toda la página */
+  :focus-visible {
+    outline: 3px solid var(--color-naranjo-400);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-naranjo-500);
+    color: #ffffff;
+  }
+
+  /* Compensa el header sticky al saltar con anclas */
+  :target {
+    scroll-margin-top: 6rem;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   UTILIDADES DE COMPOSICIÓN
+   ─────────────────────────────────────────────── */
+@utility contenedor {
+  width: 100%;
+  max-width: 78rem;
+  margin-inline: auto;
+  padding-inline: 1.25rem;
+
+  @media (width >= 768px) {
+    padding-inline: 2rem;
+  }
+}
+
+/* Transición explícita en vez de `transition: all`, que anima
+   propiedades de layout sin querer y cuesta caro en render. */
+@utility transicion-suave {
+  transition-property: transform, background-color, border-color, box-shadow, color, opacity;
+}
+
+/* Respeta el notch y la barra de gestos en iPhone */
+@utility margen-seguro {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  padding-right: env(safe-area-inset-right, 0px);
+}
+
+/* Texto azul técnico para destacar palabras clave (sólido sin degradado) */
+@utility texto-destacado {
+  color: var(--color-azul-500);
+}
+
+/* Rejilla técnica de fondo, evoca un plano de taller */
+@utility rejilla-taller {
+  background-image:
+    linear-gradient(to right, color-mix(in oklab, var(--color-denim-400) 12%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in oklab, var(--color-denim-400) 12%, transparent) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* Borde degradado sutil para tarjetas oscuras */
+@utility tarjeta-borde {
+  position: relative;
+  background:
+    linear-gradient(var(--color-navy-900), var(--color-navy-900)) padding-box,
+    linear-gradient(
+        160deg,
+        color-mix(in oklab, var(--color-denim-400) 45%, transparent),
+        color-mix(in oklab, var(--color-navy-700) 20%, transparent) 45%,
+        transparent 75%
+      )
+      border-box;
+  border: 1px solid transparent;
+}
+
+/* ───────────────────────────────────────────────
+   EFECTO TIPOGRÁFICO 3D MULTICAPA (PALETA DEL SITIO)
+   Texto superior blanco acerado metálico + texto inferior cian y cobalto eléctrico
+   ─────────────────────────────────────────────── */
+@utility titulo-3d-stack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.85;
+}
+
+@utility titulo-3d-sup {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  background: linear-gradient(180deg, #ffffff 15%, var(--color-humo-200) 52%, rgba(56, 189, 248, 0.2) 94%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transform: translateY(22%);
+  z-index: 1;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
+}
+
+@utility titulo-3d-inf {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  background: linear-gradient(
+    180deg,
+    #70c4ff 0%,
+    #38bdf8 32%,
+    #1d63ed 68%,
+    #0c1836 98%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+  z-index: 2;
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 12px rgba(29, 99, 237, 0.35));
+}
+
+/* ───────────────────────────────────────────────
+   TRATAMIENTO DE FOTOS REALES
+   Fotos a todo color natural con nitidez y contraste optimizado
+   ─────────────────────────────────────────────── */
+@utility foto-duotono {
+  filter: contrast(1.03) brightness(0.98);
+  transition:
+    filter 0.4s var(--ease-salida),
+    transform 0.7s var(--ease-salida);
+}
+
+/* ───────────────────────────────────────────────
+   ANIMACIONES DE ENTRADA (estado inicial)
+   GSAP las anima; si el JS no carga, este fallback
+   las muestra igual para no dejar la página en blanco.
+   ─────────────────────────────────────────────── */
+@layer components {
+  .revelar {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  /* Hero: el texto entra escalonado y la camioneta llega manejando */
+  .hero-entra {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  [data-hero-auto] {
+    opacity: 0;
+  }
+
+  /* Si GSAP arrancó, marca el <html> y toma el control */
+  html:not(.js-listo) .revelar,
+  html:not(.js-listo) .hero-entra,
+  html:not(.js-listo) [data-hero-auto],
+  html:not(.js-listo) [data-camioneta] {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* ───────────────────────────────────────────────
+   CABECERA SOBRE EL HERO CLARO
+   Arriba del todo la cabecera flota sobre fondo
+   blanco: el texto blanco de marca se vuelve navy.
+   ─────────────────────────────────────────────── */
+.cabecera-clara :is(.text-white, .text-humo-200) {
+  color: var(--color-azul-900);
+}
+
+.cabecera-clara .text-denim-300,
+.cabecera-clara .text-naranjo-400 {
+  color: var(--color-azul-600);
+}
+
+/* Sobre el hero azul el botón de la cabecera se alinea al azul de la portada */
+.cabecera-clara a[href*='wa.me'] {
+  background-color: var(--color-azul-600);
+  color: #fff;
+  box-shadow: 0 12px 26px -12px rgba(29, 99, 237, 0.85);
+}
+
+.cabecera-clara a[href*='wa.me']:hover {
+  background-color: var(--color-azul-500);
+}
+
+.cabecera-clara [data-abrir-menu] {
+  border-color: color-mix(in oklab, var(--color-azul-900) 18%, transparent);
+  background-color: color-mix(in oklab, var(--color-azul-900) 5%, transparent);
+  color: var(--color-azul-900);
+}
+
+/* ───────────────────────────────────────────────
+   ACCESIBILIDAD: movimiento reducido
+   ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .revelar,
+  .hero-entra,
+  [data-hero-auto],
+  [data-camioneta] {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

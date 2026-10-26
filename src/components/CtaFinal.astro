@@ -1,0 +1,40 @@
+---
+import { linkWhatsApp } from '../data/negocio';
+import Icono from './Icono.astro';
+---
+
+<section id="contacto" class="relative py-20 lg:py-28">
+  <div class="contenedor">
+    <div
+      class="relative overflow-hidden rounded-[2.5rem] border border-white/10 bg-gradient-to-br from-azul-700 via-naranjo-600 to-navy-950 px-6 py-14 text-center sm:px-12 lg:py-20"
+    >
+      <div class="rejilla-taller absolute inset-0 opacity-[0.18] mix-blend-overlay" aria-hidden="true"></div>
+      <div
+        class="absolute -left-16 -top-16 size-72 rounded-full bg-naranjo-400/20 blur-3xl"
+        aria-hidden="true"
+      >
+      </div>
+
+      <div class="relative mx-auto max-w-2xl">
+        <h2 class="revelar text-[clamp(2rem,5vw,3.5rem)] text-white">
+          ¿Listo para instalar tu cargador eléctrico?
+        </h2>
+        <p class="revelar mx-auto mt-5 max-w-lg text-lg font-medium text-humo-200/90">
+          Cuéntanos sobre tu vehículo y el lugar de instalación. Coordinemos una visita técnica para evaluar tu proyecto.
+        </p>
+
+        <div class="revelar mt-9 flex justify-center">
+          <a
+            href={linkWhatsApp()}
+            target="_blank"
+            rel="noopener"
+            class="inline-flex items-center justify-center gap-2.5 rounded-full bg-naranjo-500 px-8 py-4 font-display text-base font-extrabold text-white shadow-xl shadow-naranjo-500/30 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
+          >
+            <Icono nombre="whatsapp" class="size-5" />
+            Escribir por WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

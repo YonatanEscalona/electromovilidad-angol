@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+import { negocio, servicios } from '../data/negocio';
+
+interface Props {
+  titulo: string;
+  descripcion: string;
+  imagen?: string;
+}
+
+const { titulo, descripcion, imagen = '/og.jpg' } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const ogAbsoluta = new URL(imagen, Astro.site).href;
+
+const schema = {
+  '@context':'https://schema.org', '@type':'Electrician', name:negocio.nombre,
+  description:negocio.descripcion, url:canonical, image:ogAbsoluta,
+  telephone:negocio.telefono, email:negocio.email,
+  address:{'@type':'PostalAddress',streetAddress:negocio.direccion.calle,addressLocality:negocio.direccion.comuna,addressRegion:negocio.direccion.region,addressCountry:negocio.direccion.pais},
+  areaServed:{'@type':'AdministrativeArea',name:negocio.direccion.region},
+  hasOfferCatalog:{'@type':'OfferCatalog',name:'Servicios de electromovilidad',itemListElement:servicios.map(s=>({'@type':'Offer',itemOffered:{'@type':'Service',name:s.titulo,description:s.resumen}}))}
+};
+
+---
+
+<!doctype html>
+<html lang="es-CL">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="apple-touch-icon" href="/favicon.png" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{titulo}</title>
+    <meta name="description" content={descripcion} />
+    <link rel="canonical" href={canonical} />
+    <meta name="robots" content="index, follow" />
+    <meta name="geo.region" content="CL" />
+    <meta name="geo.placename" content={negocio.direccion.comuna} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={negocio.nombre} />
+    <meta property="og:title" content={titulo} />
+    <meta property="og:description" content={descripcion} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogAbsoluta} />
+    <meta property="og:locale" content="es_CL" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <meta name="theme-color" content="#0b1832" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap"
+    />
+
+    <script is:inline set:html={JSON.stringify(schema)} type="application/ld+json" />
+
+    <!--
+      Marca que el JS está vivo ANTES de pintar, para que los elementos
+      animados no aparezcan y desaparezcan. Si el script de animaciones
+      no llega a tiempo, el respaldo devuelve la página a su estado visible.
+    -->
+    <script is:inline>
+      document.documentElement.classList.add('js-listo');
+      window.setTimeout(function () {
+        if (!window.__animacionesListas) {
+          document.documentElement.classList.remove('js-listo');
+        }
+      }, 2500);
+    </script>
+  </head>
+
+  <body>
+    <a
+      href="#contenido"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-naranjo-500 focus:px-5 focus:py-3 focus:font-semibold focus:text-navy-950"
+    >
+      Saltar al contenido
+    </a>
+    <slot />
+  </body>
+</html>

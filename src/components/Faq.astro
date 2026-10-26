@@ -1,0 +1,71 @@
+---
+import { faqs, linkWhatsApp } from '../data/negocio';
+import Icono from './Icono.astro';
+
+/** Datos estructurados de preguntas frecuentes: puede ganar espacio extra en Google. */
+const schemaFaq = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.pregunta,
+    acceptedAnswer: { '@type': 'Answer', text: f.respuesta },
+  })),
+};
+---
+
+<section id="preguntas" class="relative py-24 lg:py-32">
+  <div class="contenedor">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <header class="lg:col-span-5">
+        <p class="revelar text-xs font-bold tracking-[0.2em] text-naranjo-400 uppercase">
+          Preguntas frecuentes
+        </p>
+        <h2 class="revelar mt-4 text-[clamp(2rem,4vw,3rem)] text-white">
+          Las dudas que<br class="hidden sm:block" />
+          siempre nos hacen
+        </h2>
+        <p class="revelar mt-5 text-humo-200/85">
+          ¿No encuentras tu pregunta? Escríbenos por WhatsApp y te respondemos al tiro.
+        </p>
+        <a
+          href={linkWhatsApp('Hola, tengo una consulta sobre cargadores eléctricos:')}
+          target="_blank"
+          rel="noopener"
+          class="revelar mt-7 inline-flex items-center gap-2.5 rounded-full border border-naranjo-400/40 bg-naranjo-500/10 px-6 py-3.5 font-semibold text-naranjo-300 transicion-suave duration-300 hover:bg-naranjo-500 hover:text-white"
+        >
+          <Icono nombre="whatsapp" class="size-5" />
+          Hacer una consulta
+        </a>
+      </header>
+
+      <div class="lg:col-span-7">
+        <ul class="space-y-3">
+          {
+            faqs.map((f, i) => (
+              <li class="revelar">
+                <details
+                  class="group overflow-hidden rounded-2xl border border-white/8 bg-navy-900/60 transition-colors duration-300 open:border-naranjo-400/25 hover:border-white/15"
+                  name="faq"
+                  open={i === 0}
+                >
+                  <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 font-display text-base font-bold text-white [&::-webkit-details-marker]:hidden">
+                    {f.pregunta}
+                    <span class="grid size-8 shrink-0 place-items-center rounded-full bg-white/5 text-naranjo-400 transition-transform duration-300 group-open:rotate-45">
+                      <Icono nombre="mas" class="size-4" />
+                    </span>
+                  </summary>
+                  <div class="px-6 pb-6 text-sm leading-relaxed text-humo-200/80">
+                    {f.respuesta}
+                  </div>
+                </details>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <script is:inline set:html={JSON.stringify(schemaFaq)} type="application/ld+json" />
+</section>

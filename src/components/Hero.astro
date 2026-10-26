@@ -1,0 +1,148 @@
+---
+import { Image, getImage } from 'astro:assets';
+import fondoEscritorio from '../assets/hero-fondo.png';
+import fondoMovil from '../assets/hero-fondo-movil.png';
+import jeep from '../assets/electromovilidad/hero.webp';
+import { linkWhatsApp } from '../data/negocio';
+import Icono from './Icono.astro';
+
+/**
+ * Fondo con dirección de arte: la pieza vertical en teléfono y la
+ * horizontal en escritorio. Con <picture> el navegador descarga una sola.
+ */
+const fondoAncho = await getImage({
+  src: fondoEscritorio,
+  format: 'webp',
+  quality: 72,
+  widths: [1280, 1600, 1920, 2400],
+});
+
+const fondoAlto = await getImage({
+  src: fondoMovil,
+  format: 'webp',
+  quality: 72,
+  widths: [480, 720, 900, 1080],
+});
+
+// En teléfono el espacio manda: mismas promesas, etiqueta corta.
+const confianza = [
+  { icono: 'garantia', texto: 'Tramitación TE-6 (SEC)', corto: 'Tramitación TE-6' },
+  { icono: 'domicilio', texto: 'Solución llave en mano', corto: 'Llave en mano' },
+  { icono: 'precio', texto: 'La Araucanía', corto: 'La Araucanía' },
+];
+---
+
+<section id="inicio" class="relative isolate overflow-hidden bg-[#fdfdfd] pt-20">
+  <!--
+    ── Fondo geométrico ──────────────────────────────────────
+    En teléfono la pieza vertical ancla abajo (ruta + asfalto) y se
+    desvanece hacia el blanco; en escritorio la horizontal ocupa todo.
+  -->
+  <picture>
+    <source media="(min-width: 1024px)" srcset={fondoAncho.srcSet.attribute} sizes="100vw" />
+    <img
+      src={fondoAlto.src}
+      srcset={fondoAlto.srcSet.attribute}
+      sizes="100vw"
+      alt=""
+      aria-hidden="true"
+      fetchpriority="high"
+      decoding="async"
+      class="absolute inset-x-0 bottom-0 -z-20 h-[40%] w-full object-cover object-bottom [mask-image:linear-gradient(to_bottom,transparent_0,#000_22%)] lg:inset-0 lg:h-full lg:object-right lg:[mask-image:none]"
+    />
+  </picture>
+
+  <!-- Vela blanca: en escritorio el texto siempre cae sobre blanco -->
+  <div
+    class="absolute inset-y-0 left-0 -z-10 hidden w-[60%] bg-[linear-gradient(90deg,#fdfdfd_0%,#fdfdfd_38%,rgba(253,253,253,0.92)_62%,rgba(253,253,253,0)_100%)] lg:block"
+    aria-hidden="true"
+  >
+  </div>
+
+  <!-- Trama de puntos: el mismo recurso gráfico del fondo, para el aire de arriba -->
+  <div
+    class="absolute top-[16%] right-6 -z-10 h-16 w-24 bg-[radial-gradient(circle,var(--color-azul-600)_1.6px,transparent_1.7px)] bg-[length:14px_14px] opacity-45 lg:hidden"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div
+    class="contenedor grid min-h-[calc(100svh-5rem)] content-center gap-4 pt-2 pb-6 sm:gap-8 sm:pt-8 lg:grid-cols-12 lg:gap-0 lg:pb-16"
+  >
+    <!-- ── Columna de texto ──────────────────────────────────── -->
+    <div class="lg:col-span-7 xl:col-span-6">
+      <h1
+        class="hero-entra text-[clamp(2.2rem,5.5vw,4.3rem)] font-black tracking-[-0.03em] text-azul-900 leading-[1.1]"
+      >
+        Tu Vehículo Eléctrico,<br />
+        <span class="text-azul-600">Siempre Listo.</span>
+      </h1>
+
+      <p
+        class="hero-entra mt-4 max-w-[34rem] text-base leading-relaxed text-pizarra-600 sm:mt-5 sm:text-lg lg:max-w-[31rem] xl:max-w-[34rem]"
+      >
+        Instalación de cargadores segura y certificada. Soluciones llave en mano para hogares y empresas con <strong class="font-bold text-azul-600">cumplimiento normativo SEC.</strong>
+      </p>
+
+      <div class="hero-entra mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
+        <a
+          href={linkWhatsApp()}
+          target="_blank"
+          rel="noopener"
+          class="inline-flex items-center justify-center gap-3 rounded-full bg-azul-600 px-8 py-4 font-display text-base font-extrabold text-white shadow-[0_14px_30px_-10px_rgba(17,86,212,0.75)] transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-azul-500 hover:shadow-[0_20px_38px_-12px_rgba(17,86,212,0.85)]"
+        >
+          <Icono nombre="whatsapp" class="size-[22px]" />
+          Solicitar Visita
+        </a>
+
+        <button
+          type="button" data-compartir
+          class="group hidden items-center gap-2.5 px-2 py-3 font-display text-sm font-extrabold text-azul-900 transition-colors duration-300 hover:text-azul-600 sm:inline-flex sm:flex-1"
+        >
+          Compartir Web
+          <Icono
+            nombre="compartir"
+            class="size-4 transition-transform duration-300 group-hover:translate-y-1"
+          />
+          <span class="hidden h-px flex-1 bg-azul-900/15 sm:block"></span>
+        </button>
+      </div>
+
+      <ul
+        class="hero-entra mt-6 flex max-w-2xl flex-wrap items-center gap-x-4 gap-y-2 text-[12px] sm:mt-10 sm:grid sm:grid-cols-3 sm:gap-x-6 sm:gap-y-3.5 sm:text-[13px] lg:mt-12 lg:max-w-[30rem] xl:max-w-[34rem] xl:gap-x-7 xl:text-sm"
+      >
+        {
+          confianza.map((c) => (
+            <li class="flex items-center gap-1.5 font-semibold text-pizarra-800 sm:gap-2.5 sm:font-medium">
+              <Icono nombre={c.icono} class="size-[18px] shrink-0 text-azul-600 sm:size-[22px]" />
+              <span class="sm:hidden">{c.corto}</span>
+              <span class="hidden sm:inline">{c.texto}</span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <!-- ── Camioneta: entra manejando desde la derecha ────────── -->
+    <div
+      class="pointer-events-none relative mt-6 -mr-5 -mb-6 w-[108%] max-w-none self-end sm:-mr-8 sm:ml-auto sm:w-[86%] lg:absolute lg:right-[1%] lg:bottom-[2%] lg:mt-0 lg:mr-0 lg:mb-0 lg:w-[46%] xl:w-[48%] 2xl:w-[46%]"
+      data-hero-auto
+    >
+      <Image
+        src={jeep}
+        alt="Vehículo eléctrico blanco conectado a un cargador"
+        widths={[560, 760, 980, 1240]}
+        sizes="(min-width: 1024px) 48vw, 110vw"
+        class="relative w-full drop-shadow-[0_18px_20px_rgba(6,26,54,0.2)]"
+        loading="eager"
+        fetchpriority="high"
+      />
+
+      <!-- Sombra de contacto con el asfalto -->
+      <span
+        class="absolute inset-x-[7%] bottom-[1%] -z-10 h-[8%] rounded-[50%] bg-[#061a36]/40 blur-[14px]"
+        aria-hidden="true"
+        data-hero-sombra></span>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,76 @@
+---
+import { Image } from 'astro:assets';
+import camioneta from '../assets/electromovilidad/van.webp';
+import { linkWhatsApp } from '../data/negocio';
+import Icono from './Icono.astro';
+
+const puntos = [
+  'Instalación Wallbox residencial y empresas',
+  'Aumentos de capacidad y balanceo dinámico',
+  'Gestión de la declaración TE-6 ante la SEC',
+];
+---
+
+<section id="domicilio" class="relative overflow-hidden py-20 lg:py-28 bg-navy-950">
+  <!-- Sutil brillo azul de fondo -->
+  <div class="pointer-events-none absolute top-1/2 right-[-5%] size-[550px] rounded-full bg-azul-600/15 blur-[140px]" aria-hidden="true"></div>
+
+  <div class="contenedor relative z-10">
+    <div class="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
+      <div>
+        <h2 class="text-[clamp(1.9rem,4vw,3rem)] font-display font-extrabold text-white leading-tight">
+          Tu punto de carga,<br />
+          donde lo necesites.
+        </h2>
+
+        <p class="mt-5 max-w-lg text-humo-200/85 text-base sm:text-lg leading-relaxed">
+          Especialistas en Electromovilidad en La Araucanía. Llegamos a tu hogar o empresa con una solución integral: evaluamos tu red, diseñamos la instalación y dejamos tu infraestructura de carga lista para usar.
+        </p>
+
+        <ul class="mt-7 space-y-3">
+          {
+            puntos.map((p) => (
+              <li class="flex items-start gap-3 text-humo-200/85">
+                <span class="mt-0.5 grid size-5 shrink-0 place-items-center rounded-full bg-naranjo-500/15 text-naranjo-400">
+                  <Icono nombre="check" class="size-3.5" />
+                </span>
+                <span class="text-sm sm:text-base">{p}</span>
+              </li>
+            ))
+          }
+        </ul>
+
+        <a
+          href={linkWhatsApp('Hola, quiero solicitar una visita técnica para un cargador. Mi dirección es:')}
+          target="_blank"
+          rel="noopener"
+          class="mt-9 inline-flex items-center gap-2.5 rounded-full bg-naranjo-500 px-7 py-4 font-display font-extrabold text-white shadow-xl shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
+        >
+          <Icono nombre="whatsapp" class="size-5" />
+          Solicitar Visita Técnica
+        </a>
+      </div>
+
+      <div class="relative flex items-center justify-center" data-camioneta-stage>
+        <div class="relative w-full max-w-lg lg:max-w-none">
+          <!-- Sombra de la camioneta separada para escalar limpiamente -->
+          <div
+            class="absolute inset-x-6 bottom-2 h-10 rounded-[50%] bg-black/75 blur-xl pointer-events-none"
+            aria-hidden="true"
+            data-camioneta-sombra
+          ></div>
+          <div class="relative z-10 w-full" data-camioneta-auto>
+            <Image
+              src={camioneta}
+              alt="Vehículo de servicio de Soluciones Integrales — imagen referencial"
+              widths={[420, 640, 900, 1200]}
+              sizes="(min-width: 1024px) 560px, 90vw"
+              class="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] select-none pointer-events-none"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,87 @@
+---
+import { Image } from 'astro:assets';
+import { ventajas, linkWhatsApp } from '../data/negocio';
+import Icono from './Icono.astro';
+import fotoTaller from '../assets/electromovilidad/estacion.webp';
+---
+
+<section id="por-que-elegirnos" class="relative isolate overflow-hidden py-24 lg:py-32">
+  <!-- Foto real del taller como fondo visible -->
+  <div class="pointer-events-none absolute inset-0 -z-20 overflow-hidden" aria-hidden="true">
+    <Image
+      src={fotoTaller}
+      alt=""
+      widths={[600, 1024, 1600, 2000]}
+      sizes="100vw"
+      class="h-full w-full object-cover object-center brightness-[0.55] contrast-[1.08]"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Velo suave para fundir bordes y dar contraste a los textos -->
+  <div
+    class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-navy-950/90 via-navy-950/50 to-navy-950/90"
+    aria-hidden="true"
+  >
+  </div>
+
+  <div class="contenedor">
+    <header class="mx-auto max-w-2xl text-center">
+      <div class="revelar pb-2">
+        <h2 class="titulo-3d-stack items-center text-center">
+          <span class="titulo-3d-sup text-[clamp(1.35rem,3.2vw,2.2rem)]">Nuestro Proceso</span>
+          <span class="titulo-3d-inf text-[clamp(2.1rem,5.2vw,3.6rem)]">Llave en mano, en 4 pasos</span>
+        </h2>
+      </div>
+      <p class="revelar mx-auto mt-4 sm:mt-5 max-w-xl text-base leading-relaxed text-humo-200/90 sm:text-lg">
+        Evaluación, diseño, instalación y declaración TE-6. Nos ocupamos de cada etapa para que tu vehículo eléctrico esté siempre listo.
+      </p>
+    </header>
+
+    <!-- 4 Tarjetas de confianza con backdrop-blur sobre el fondo del taller -->
+    <ul class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-4" data-grilla-ventajas>
+      {
+        ventajas.map((v, i) => (
+          <li class="revelar group">
+            <article class="relative flex h-full flex-col items-center overflow-hidden rounded-3xl border border-white/10 bg-navy-900/75 px-6 pb-8 pt-10 text-center backdrop-blur-md transicion-suave duration-500 ease-[var(--ease-salida)] hover:-translate-y-2 hover:border-naranjo-400/40 hover:bg-navy-900/95 hover:shadow-[0_16px_36px_-10px_rgba(29,99,237,0.25)]">
+              {/* Indicador de paso / número elegante en la esquina superior */}
+              <span
+                class="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-navy-950/80 px-2.5 py-0.5 font-mono text-xs font-bold text-naranjo-400/80 backdrop-blur-sm transition-all duration-300 group-hover:border-naranjo-400/40 group-hover:bg-naranjo-500/15 group-hover:text-naranjo-300"
+              >
+                <span class="size-1.5 rounded-full bg-naranjo-400" />
+                {String(i + 1).padStart(2, '0')}
+              </span>
+
+              <span class="relative grid size-16 place-items-center rounded-2xl bg-gradient-to-br from-naranjo-500 to-naranjo-600 text-white shadow-lg shadow-naranjo-500/25 transition-transform duration-500 ease-[var(--ease-salida)] group-hover:scale-110 group-hover:-rotate-6">
+                <Icono nombre={v.icono} class="size-8" />
+              </span>
+
+              <h3 class="relative mt-6 text-lg text-white font-bold">{v.titulo}</h3>
+              <p class="relative mt-3 text-sm leading-relaxed text-humo-200/80">{v.texto}</p>
+            </article>
+          </li>
+        ))
+      }
+    </ul>
+
+    <!-- Botones de Acción -->
+    <div class="revelar mt-14 flex flex-col items-center justify-center gap-3 sm:flex-row">
+      <a
+        href={linkWhatsApp()}
+        target="_blank"
+        rel="noopener"
+        class="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-naranjo-500 px-7 py-4 font-display font-extrabold text-white shadow-xl shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
+      >
+        <Icono nombre="whatsapp" class="size-5" />
+        Solicitar Visita
+      </a>
+      <a
+        href="#trabajos"
+        class="inline-flex w-full sm:w-auto items-center justify-center gap-2 rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur-sm transicion-suave duration-300 hover:border-white/40 hover:bg-white/10"
+      >
+        Ver proyectos
+        <Icono nombre="flecha" class="size-4" />
+      </a>
+    </div>
+  </div>
+</section>
