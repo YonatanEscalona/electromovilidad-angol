@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import { servicios, linkWhatsApp } from '../data/negocio';
 import Icono from './Icono.astro';
 
-// SVG monocromos originales, integrados al mismo sistema de máscaras.
+// Pictogramas SVG originales con siluetas claras y detalles de equipamiento.
 import residencial from '../assets/servicios/residencial.svg';
 import certificacion from '../assets/servicios/certificacion.svg';
 import empresas from '../assets/servicios/empresas.svg';
@@ -47,11 +47,16 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
                 <li class="revelar group relative">
                   {/* Tarjeta interactiva en móvil y desktop */}
                   <div class="flex items-start gap-4 sm:gap-4.5 rounded-2xl border border-white/5 bg-navy-900/60 p-4 transition-all duration-300 group-hover:border-naranjo-400/30 group-hover:bg-navy-900/90 sm:border-white/5 sm:bg-navy-900/30 sm:p-3.5 sm:hover:bg-navy-900/70">
-                    {/* Contenedor de Icono Agrandado con máscara CSS */}
+                    {/* SVG en color nativo para conservar contraste, volumen y detalles. */}
                     <div class="mt-0.5 grid size-14 sm:size-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-naranjo-500/20 via-naranjo-500/10 to-navy-800 border border-naranjo-500/30 text-naranjo-400 shadow-md shadow-naranjo-500/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-naranjo-500/25 group-hover:border-naranjo-400/50 group-hover:shadow-naranjo-500/20">
-                      <span
-                        class="block size-8 sm:size-9 bg-naranjo-400 transicion-suave duration-300 group-hover:bg-naranjo-300"
-                        style={`-webkit-mask-image:url(${src}); mask-image:url(${src}); -webkit-mask-size:contain; mask-size:contain; -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-position:center; mask-position:center;`}
+                      <img
+                        src={src}
+                        width="48"
+                        height="48"
+                        alt=""
+                        class="block size-11 object-contain sm:size-12"
+                        loading="lazy"
+                        decoding="async"
                         aria-hidden="true"
                       />
                     </div>

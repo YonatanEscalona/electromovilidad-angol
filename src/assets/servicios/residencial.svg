@@ -1,1 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="m12 48 34-29 34 29M22 42v61h48V42M32 103V70h24v33"/><rect x="75" y="63" width="31" height="45" rx="6"/><path d="m94 71-10 15h10l-9 14M106 76c13 0 13 32 0 32M86 112v7m-5-53V51m12 15V51"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Wallbox residencial con cable de carga</title>
+      <path d="m8 24 17-14 17 14M13 21v18" stroke="#91b5e2" stroke-width="2.8"/>
+      <rect x="21" y="17" width="32" height="49" rx="8" fill="#b6cce7"/>
+      <rect x="17" y="14" width="32" height="49" rx="8" fill="#f4f8ff"/>
+      <rect x="23" y="21" width="20" height="24" rx="4" fill="#102645"/>
+      <path d="m35 25-8 11h7l-3 7 10-13h-7l3-5Z" fill="#7dd3fc"/>
+      <rect x="27" y="50" width="12" height="3" rx="1.5" fill="#3b82f6"/>
+      <path d="M46 36h8c10 0 14 6 14 15v9c0 9-4 14-10 14s-9-5-9-10v-3" stroke="#102645" stroke-width="6"/>
+      <path d="M48 36h6c9 0 12 6 12 15v9c0 8-3 12-8 12s-7-4-7-9" stroke="#91b5e2" stroke-width="2.4"/>
+      <path d="m46 55 5-2 5 10-6 3-5-8Z" fill="#3b82f6" stroke="#7dd3fc" stroke-width="1.4"/>
+      <path d="m47 55-2-5" stroke="#f4f8ff" stroke-width="3"/>
+      <circle cx="23" cy="58" r="1" fill="#91b5e2"/><circle cx="43" cy="58" r="1" fill="#91b5e2"/></svg>
