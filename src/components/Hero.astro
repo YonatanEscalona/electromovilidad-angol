@@ -5,6 +5,7 @@ import fondoMovil from '../assets/hero-fondo-movil.png';
 import vehiculoCargando from '../assets/electromovilidad/hero-carga-visible.webp';
 import { linkWhatsApp } from '../data/negocio';
 import Icono from './Icono.astro';
+import IconoConfianza from './IconoConfianza.astro';
 
 /**
  * Fondo con dirección de arte: la pieza vertical en teléfono y la
@@ -26,10 +27,10 @@ const fondoAlto = await getImage({
 
 // En teléfono el espacio manda: mismas promesas, etiqueta corta.
 const confianza = [
-  { icono: 'garantia', texto: 'Tramitación TE-6 (SEC)', corto: 'Tramitación TE-6' },
-  { icono: 'domicilio', texto: 'Instalación de cargadores', corto: 'Instalación segura' },
-  { icono: 'precio', texto: 'La Araucanía', corto: 'La Araucanía' },
-];
+  { icono: 'certificacion', texto: 'Tramitación TE-6 (SEC)', corto: 'Tramitación TE-6' },
+  { icono: 'cargador', texto: 'Instalación de cargadores', corto: 'Instalación segura' },
+  { icono: 'cobertura', texto: 'La Araucanía', corto: 'La Araucanía' },
+] as const;
 ---
 
 <section id="inicio" class="relative isolate overflow-hidden bg-[#0b0e0c] pt-20">
@@ -114,7 +115,7 @@ const confianza = [
         {
           confianza.map((c) => (
             <li class="flex items-center gap-1.5 font-semibold text-white/85 sm:gap-2.5 sm:font-medium">
-              <Icono nombre={c.icono} class="size-[18px] shrink-0 text-marca-amarillo sm:size-[22px]" />
+              <IconoConfianza nombre={c.icono} class="size-8 shrink-0 text-marca-amarillo sm:size-9" />
               <span class="sm:hidden">{c.corto}</span>
               <span class="hidden sm:inline">{c.texto}</span>
             </li>

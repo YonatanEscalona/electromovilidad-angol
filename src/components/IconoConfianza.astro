@@ -1,0 +1,48 @@
+---
+interface Props {
+  nombre: 'certificacion' | 'cargador' | 'cobertura';
+  class?: string;
+}
+
+const { nombre, class: clase = 'size-8' } = Astro.props;
+
+// Una misma grilla y trazo; blanco para el equipo y amarillo para la función.
+const dibujos = {
+  certificacion: `
+    <path d="M7 3h11l6 6v9M18 3v6h6M15 27H7a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Z" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".9"/>
+    <path d="M18 3v6h6" fill="currentColor" fill-opacity=".2"/>
+    <path d="M9 12h9M9 17h6M9 22h3" stroke="#fff" stroke-opacity=".65"/>
+    <circle cx="23" cy="23" r="7" fill="currentColor" stroke="none"/>
+    <path d="m19.5 23 2.3 2.4 4.7-5" stroke="#171916" stroke-width="2.2"/>
+  `,
+  cargador: `
+    <rect x="3" y="3" width="16" height="26" rx="4" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".9"/>
+    <rect x="7" y="7" width="8" height="11" rx="1.5" fill="currentColor" fill-opacity=".12" stroke="none"/>
+    <path d="m12 7-4 6h3l-1 5 5-7h-3Z" fill="currentColor" stroke="none"/>
+    <path d="M19 10h3a6 6 0 0 1 6 6v7a4.5 4.5 0 0 1-9 0v-2"/>
+    <rect x="16.5" y="17.5" width="5" height="6" rx="1.3" fill="currentColor" stroke="#171916" stroke-width="1.2"/>
+    <path d="M18 17.5v-2m2 2v-2" stroke-width="1.6"/>
+    <path d="M8.5 23h5" stroke-width="2.5"/>
+  `,
+  cobertura: `
+    <path d="M6 25.5C6 28 10.5 30 16 30s10-2 10-4.5" stroke="#fff" stroke-opacity=".5"/>
+    <path d="M25 12c0 6.5-9 14.5-9 14.5S7 18.5 7 12a9 9 0 1 1 18 0Z" fill="#fff" fill-opacity=".06" stroke="#fff" stroke-opacity=".9"/>
+    <circle cx="16" cy="12" r="4" fill="currentColor" stroke="none"/>
+    <circle cx="16" cy="12" r="1.25" fill="#171916" stroke="none"/>
+  `,
+};
+---
+
+<svg
+  class={clase}
+  viewBox="0 0 32 32"
+  fill="none"
+  stroke="currentColor"
+  stroke-width="1.8"
+  stroke-linecap="round"
+  stroke-linejoin="round"
+  aria-hidden="true"
+  focusable="false"
+  data-icono-confianza={nombre}
+  set:html={dibujos[nombre]}
+/>
