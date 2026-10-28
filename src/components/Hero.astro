@@ -37,7 +37,7 @@ const confianza = [
   <!--
     ── Fondo geométrico ──────────────────────────────────────
     En teléfono la pieza vertical ancla abajo (ruta + asfalto) y se
-    desvanece hacia el blanco; en escritorio la horizontal ocupa todo.
+    desvanece hacia el fondo; en escritorio la horizontal ocupa todo.
   -->
   <picture>
     <source media="(min-width: 1024px)" srcset={fondoAncho.srcSet.attribute} sizes="100vw" />
@@ -49,7 +49,7 @@ const confianza = [
       aria-hidden="true"
       fetchpriority="high"
       decoding="async"
-      class="absolute inset-x-0 bottom-0 -z-20 h-[40%] w-full object-cover object-bottom grayscale brightness-75 [mask-image:linear-gradient(to_bottom,transparent_0,#000_22%)] lg:inset-0 lg:h-full lg:object-right lg:[mask-image:none]"
+      class="absolute inset-x-0 bottom-0 -z-20 h-[40%] w-full object-cover object-bottom [mask-image:linear-gradient(to_bottom,transparent_0,#000_22%)] lg:inset-0 lg:h-full lg:object-right lg:[mask-image:none]"
     />
   </picture>
 
