@@ -2,7 +2,7 @@
 import { Image, getImage } from 'astro:assets';
 import fondoEscritorio from '../assets/hero-fondo.png';
 import fondoMovil from '../assets/hero-fondo-movil.png';
-import jeep from '../assets/electromovilidad/hero.webp';
+import vehiculoCargando from '../assets/electromovilidad/hero-carga-visible.webp';
 import { linkWhatsApp } from '../data/negocio';
 import Icono from './Icono.astro';
 
@@ -123,16 +123,16 @@ const confianza = [
       </ul>
     </div>
 
-    <!-- ── Camioneta: entra manejando desde la derecha ────────── -->
+    <!-- Vehículo y punto de carga en primer plano, completos dentro del encuadre. -->
     <div
-      class="pointer-events-none relative mt-6 -mr-5 -mb-6 w-[108%] max-w-none self-end sm:-mr-8 sm:ml-auto sm:w-[86%] lg:absolute lg:right-[1%] lg:bottom-[2%] lg:mt-0 lg:mr-0 lg:mb-0 lg:w-[46%] xl:w-[48%] 2xl:w-[46%]"
+      class="pointer-events-none relative mt-6 w-full max-w-none self-end sm:ml-auto sm:w-[86%] lg:absolute lg:right-[1%] lg:bottom-[2%] lg:mt-0 lg:mr-0 lg:mb-0 lg:w-[46%] xl:w-[48%] 2xl:w-[46%]"
       data-hero-auto
     >
       <Image
-        src={jeep}
-        alt="Vehículo eléctrico blanco conectado a un cargador"
+        src={vehiculoCargando}
+        alt="Punto de carga eléctrico en primer plano, con cable conectado a un SUV blanco"
         widths={[560, 760, 980, 1240]}
-        sizes="(min-width: 1024px) 48vw, 110vw"
+        sizes="(min-width: 1024px) 48vw, (min-width: 640px) 86vw, 100vw"
         class="relative w-full drop-shadow-[0_18px_20px_rgba(6,26,54,0.2)]"
         loading="eager"
         fetchpriority="high"
