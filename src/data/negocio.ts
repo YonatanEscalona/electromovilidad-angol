@@ -33,7 +33,7 @@ export const faqs = [
   { pregunta: '¿Qué es la tramitación TE-6?', respuesta: 'Es la declaración ante la SEC de la puesta en servicio de la infraestructura de recarga de vehículos eléctricos. Gestionamos este trámite como parte del proyecto.' },
   { pregunta: '¿Puedo instalar varios puntos de carga?', respuesta: 'Diseñamos infraestructura para empresas y múltiples vehículos. La visita técnica permite determinar la capacidad y la necesidad de balanceo dinámico de carga.' },
   { pregunta: '¿Necesito aumentar mi empalme?', respuesta: 'Depende de tu instalación actual, del cargador y del consumo del inmueble. Lo evaluamos durante la visita técnica y definimos una solución adecuada.' },
-  { pregunta: '¿Qué incluye una solución llave en mano?', respuesta: 'La evaluación técnica, la selección y el diseño de la red, la obra civil y eléctrica, la puesta en marcha y la gestión de la declaración TE-6 ante la SEC.' },
+  { pregunta: '¿Qué incluye la instalación de un cargador?', respuesta: 'La evaluación técnica, la selección y el diseño de la red, la obra civil y eléctrica, la puesta en marcha y la gestión de la declaración TE-6 ante la SEC.' },
   { pregunta: '¿Cómo solicito una visita técnica?', respuesta: 'Escríbenos al +56 9 3517 2731 por WhatsApp. Cuéntanos dónde se instalará el cargador y qué vehículo tienes para coordinar la visita en La Araucanía.' },
 ];
 export const solucionesDestacadas = servicios.map((s, i) => ({ id: s.slug, titulo: s.titulo, texto: s.resumen, etiqueta: s.incluye[0], numero: String(i + 1).padStart(2, '0'), link: linkWhatsApp(`Hola Soluciones Integrales, quiero consultar por ${s.titulo}.`) }));
