@@ -1,38 +1,47 @@
 @import 'tailwindcss';
 
 /* ───────────────────────────────────────────────
-   TOKENS DE MARCA — PALETA AZUL COBALTO & NEGRO CARBÓN
-   Estilo Motorsport / Taller Automotriz de Alta Precisión
+   PALETA DE SOLUCIONES INTEGRALES ANGOL
+   Amarillo, tinta cálida y marfil de solucionesintegralesangol.cl.
+   Se conservan los alias anteriores para mantener los componentes.
    ─────────────────────────────────────────────── */
 @theme {
-  /* ── Fondos Negro Asfalto & Carbón Profundo ── */
-  --color-navy-950: #060911;
-  --color-navy-900: #0c1220;
-  --color-navy-800: #131b2e;
-  --color-navy-700: #1a253d;
-  --color-navy-600: #202f4d;
-  --color-navy-500: #283b61;
-  --color-denim-400: #38bdf8;
-  --color-denim-300: #70c4ff;
+  --color-marca-amarillo: #f3bd1c;
+  --color-marca-amarillo-claro: #ffd33f;
+  --color-marca-naranja: #b94319;
+  --color-marca-tinta: #171916;
+  --color-marca-papel: #efede6;
+  --color-marca-marfil: #f8f6f0;
 
-  /* ── Azules de Taller & Hero ── */
-  --color-azul-900: #07152e;
-  --color-azul-700: #1042a0;
-  --color-azul-600: #1d63ed;
-  --color-azul-500: #3b82f6;
-  --color-pizarra-600: #64748b;
-  --color-pizarra-800: #1e293b;
+  /* ── Superficies oscuras cálidas ── */
+  --color-navy-950: var(--color-marca-tinta);
+  --color-navy-900: #242720;
+  --color-navy-800: #30342b;
+  --color-navy-700: #41463b;
+  --color-navy-600: #52594b;
+  --color-navy-500: #666e5f;
+  --color-denim-400: var(--color-marca-amarillo);
+  --color-denim-300: #ffe58a;
 
-  /* ── Acentos: Cobalto Eléctrico & Cian Técnico ── */
-  --color-naranjo-600: #154ec2;
-  --color-naranjo-500: #1d63ed;
-  --color-naranjo-400: #38bdf8;
-  --color-naranjo-300: #70c4ff;
+  /* ── Alias de marca usados por la portada y la galería ── */
+  --color-azul-900: var(--color-marca-tinta);
+  --color-azul-700: #242720;
+  --color-azul-600: var(--color-marca-amarillo);
+  --color-azul-500: var(--color-marca-amarillo-claro);
+  --color-azul-400: var(--color-marca-amarillo-claro);
+  --color-pizarra-600: #676961;
+  --color-pizarra-800: #30342b;
+
+  /* ── Acentos amarillos sobre fondos oscuros ── */
+  --color-naranjo-600: var(--color-marca-naranja);
+  --color-naranjo-500: var(--color-marca-amarillo);
+  --color-naranjo-400: var(--color-marca-amarillo-claro);
+  --color-naranjo-300: #ffe58a;
 
   /* ── Textos de Alta Legibilidad ── */
   --color-humo-50: #ffffff;
-  --color-humo-100: #f8fafc;
-  --color-humo-200: #cbd5e1;
+  --color-humo-100: var(--color-marca-marfil);
+  --color-humo-200: #e1dfd6;
 
   --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -101,7 +110,7 @@
 
   ::selection {
     background: var(--color-naranjo-500);
-    color: #ffffff;
+    color: var(--color-marca-tinta);
   }
 
   /* Compensa el header sticky al saltar con anclas */
@@ -136,7 +145,7 @@
   padding-right: env(safe-area-inset-right, 0px);
 }
 
-/* Texto azul técnico para destacar palabras clave (sólido sin degradado) */
+/* Amarillo de marca para los destacados sobre superficies oscuras. */
 @utility texto-destacado {
   color: var(--color-azul-500);
 }
@@ -166,7 +175,7 @@
 
 /* ───────────────────────────────────────────────
    EFECTO TIPOGRÁFICO 3D MULTICAPA (PALETA DEL SITIO)
-   Texto superior blanco acerado metálico + texto inferior cian y cobalto eléctrico
+   Se conserva el relieve tipográfico con tonos marfil y amarillo de marca.
    ─────────────────────────────────────────────── */
 @utility titulo-3d-stack {
   position: relative;
@@ -181,7 +190,7 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  background: linear-gradient(180deg, #ffffff 15%, var(--color-humo-200) 52%, rgba(56, 189, 248, 0.2) 94%);
+  background: linear-gradient(180deg, #ffffff 15%, var(--color-humo-200) 52%, rgba(243, 189, 28, 0.2) 94%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -198,17 +207,17 @@
   letter-spacing: -0.03em;
   background: linear-gradient(
     180deg,
-    #70c4ff 0%,
-    #38bdf8 32%,
-    #1d63ed 68%,
-    #0c1836 98%
+    #fff0b5 0%,
+    #ffd33f 32%,
+    #f3bd1c 68%,
+    #b97712 98%
   );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 12px rgba(29, 99, 237, 0.35));
+  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.65));
 }
 
 /* ───────────────────────────────────────────────
@@ -264,14 +273,14 @@
 
 .cabecera-clara .text-denim-300,
 .cabecera-clara .text-naranjo-400 {
-  color: var(--color-azul-600);
+  color: var(--color-marca-naranja);
 }
 
-/* Sobre el hero azul el botón de la cabecera se alinea al azul de la portada */
+/* Botones amarillos con texto oscuro, también sobre la portada clara. */
 .cabecera-clara a[href*='wa.me'] {
   background-color: var(--color-azul-600);
-  color: #fff;
-  box-shadow: 0 12px 26px -12px rgba(29, 99, 237, 0.85);
+  color: var(--color-marca-tinta);
+  box-shadow: 0 12px 26px -12px rgba(23, 25, 22, 0.35);
 }
 
 .cabecera-clara a[href*='wa.me']:hover {

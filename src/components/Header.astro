@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import gato from '../assets/marca.svg';
+import gato from '../assets/marca-amarilla.svg';
 import { negocio, linkWhatsApp } from '../data/negocio';
 import Icono from './Icono.astro';
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { temaInicial } = Astro.props;
-// La página de inicio tiene hero claro (#fdfdfd); las demás páginas (como galería) tienen fondo oscuro (#060911)
+// La portada usa marfil; la galería y las secciones interiores usan tinta cálida.
 const esPaginaInicio = Astro.url.pathname === '/' || Astro.url.pathname === '';
 const esTemaClaro = temaInicial !== undefined ? temaInicial === 'claro' : esPaginaInicio;
 
@@ -70,7 +70,7 @@ const enlaces = [
         href={linkWhatsApp()}
         target="_blank"
         rel="noopener"
-        class="hidden items-center gap-2 rounded-full bg-naranjo-500 px-5 py-2.5 text-sm font-bold text-white shadow-lg shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950 hover:shadow-naranjo-500/40 sm:inline-flex"
+        class="hidden items-center gap-2 rounded-full bg-naranjo-500 px-5 py-2.5 text-sm font-bold text-navy-950 shadow-lg shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950 hover:shadow-naranjo-500/40 sm:inline-flex"
       >
         <Icono nombre="whatsapp" class="size-[18px]" />
         Solicitar Visita
@@ -142,7 +142,7 @@ const enlaces = [
       href={linkWhatsApp()}
       target="_blank"
       rel="noopener"
-      class="mt-6 flex items-center justify-center gap-2 rounded-full bg-naranjo-500 px-6 py-4 font-display text-lg font-extrabold text-white shadow-lg shadow-naranjo-500/25"
+      class="mt-6 flex items-center justify-center gap-2 rounded-full bg-naranjo-500 px-6 py-4 font-display text-lg font-extrabold text-navy-950 shadow-lg shadow-naranjo-500/25"
     >
       <Icono nombre="whatsapp" class="size-5" />
       Escribir por WhatsApp

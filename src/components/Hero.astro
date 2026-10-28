@@ -32,7 +32,7 @@ const confianza = [
 ];
 ---
 
-<section id="inicio" class="relative isolate overflow-hidden bg-[#fdfdfd] pt-20">
+<section id="inicio" class="relative isolate overflow-hidden bg-marca-marfil pt-20">
   <!--
     ── Fondo geométrico ──────────────────────────────────────
     En teléfono la pieza vertical ancla abajo (ruta + asfalto) y se
@@ -48,13 +48,13 @@ const confianza = [
       aria-hidden="true"
       fetchpriority="high"
       decoding="async"
-      class="absolute inset-x-0 bottom-0 -z-20 h-[40%] w-full object-cover object-bottom [mask-image:linear-gradient(to_bottom,transparent_0,#000_22%)] lg:inset-0 lg:h-full lg:object-right lg:[mask-image:none]"
+      class="absolute inset-x-0 bottom-0 -z-20 h-[40%] w-full object-cover object-bottom grayscale [mask-image:linear-gradient(to_bottom,transparent_0,#000_22%)] lg:inset-0 lg:h-full lg:object-right lg:[mask-image:none]"
     />
   </picture>
 
   <!-- Vela blanca: en escritorio el texto siempre cae sobre blanco -->
   <div
-    class="absolute inset-y-0 left-0 -z-10 hidden w-[60%] bg-[linear-gradient(90deg,#fdfdfd_0%,#fdfdfd_38%,rgba(253,253,253,0.92)_62%,rgba(253,253,253,0)_100%)] lg:block"
+    class="absolute inset-y-0 left-0 -z-10 hidden w-[60%] bg-[linear-gradient(90deg,#f8f6f0_0%,#f8f6f0_38%,rgba(248,246,240,0.92)_62%,rgba(248,246,240,0)_100%)] lg:block"
     aria-hidden="true"
   >
   </div>
@@ -75,13 +75,13 @@ const confianza = [
         class="hero-entra text-[clamp(2.2rem,5.5vw,4.3rem)] font-black tracking-[-0.03em] text-azul-900 leading-[1.1]"
       >
         Tu Vehículo Eléctrico,<br />
-        <span class="text-azul-600">Siempre Listo.</span>
+        <span class="text-marca-naranja">Siempre Listo.</span>
       </h1>
 
       <p
         class="hero-entra mt-4 max-w-[34rem] text-base leading-relaxed text-pizarra-600 sm:mt-5 sm:text-lg lg:max-w-[31rem] xl:max-w-[34rem]"
       >
-        Instalación de cargadores segura y certificada para hogares y empresas, con <strong class="font-bold text-azul-600">cumplimiento normativo SEC.</strong>
+        Instalación de cargadores segura y certificada para hogares y empresas, con <strong class="font-bold text-marca-naranja">cumplimiento normativo SEC.</strong>
       </p>
 
       <div class="hero-entra mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
@@ -89,7 +89,7 @@ const confianza = [
           href={linkWhatsApp()}
           target="_blank"
           rel="noopener"
-          class="inline-flex items-center justify-center gap-3 rounded-full bg-azul-600 px-8 py-4 font-display text-base font-extrabold text-white shadow-[0_14px_30px_-10px_rgba(17,86,212,0.75)] transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-azul-500 hover:shadow-[0_20px_38px_-12px_rgba(17,86,212,0.85)]"
+          class="inline-flex items-center justify-center gap-3 rounded-full bg-azul-600 px-8 py-4 font-display text-base font-extrabold text-navy-950 shadow-[0_14px_30px_-10px_rgba(23,25,22,0.22)] transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-azul-500 hover:shadow-[0_20px_38px_-12px_rgba(23,25,22,0.3)]"
         >
           <Icono nombre="whatsapp" class="size-[22px]" />
           Solicitar Visita
@@ -97,7 +97,7 @@ const confianza = [
 
         <button
           type="button" data-compartir
-          class="group hidden items-center gap-2.5 px-2 py-3 font-display text-sm font-extrabold text-azul-900 transition-colors duration-300 hover:text-azul-600 sm:inline-flex sm:flex-1"
+          class="group hidden items-center gap-2.5 px-2 py-3 font-display text-sm font-extrabold text-azul-900 transition-colors duration-300 hover:text-marca-naranja sm:inline-flex sm:flex-1"
         >
           Compartir Web
           <Icono
@@ -114,7 +114,7 @@ const confianza = [
         {
           confianza.map((c) => (
             <li class="flex items-center gap-1.5 font-semibold text-pizarra-800 sm:gap-2.5 sm:font-medium">
-              <Icono nombre={c.icono} class="size-[18px] shrink-0 text-azul-600 sm:size-[22px]" />
+              <Icono nombre={c.icono} class="size-[18px] shrink-0 text-marca-naranja sm:size-[22px]" />
               <span class="sm:hidden">{c.corto}</span>
               <span class="hidden sm:inline">{c.texto}</span>
             </li>
@@ -133,14 +133,14 @@ const confianza = [
         alt="Punto de carga eléctrico en primer plano, con cable conectado a un SUV blanco"
         widths={[560, 760, 980, 1240]}
         sizes="(min-width: 1024px) 48vw, (min-width: 640px) 86vw, 100vw"
-        class="relative w-full drop-shadow-[0_18px_20px_rgba(6,26,54,0.2)]"
+        class="relative w-full drop-shadow-[0_18px_20px_rgba(23,25,22,0.2)]"
         loading="eager"
         fetchpriority="high"
       />
 
       <!-- Sombra de contacto con el asfalto -->
       <span
-        class="absolute inset-x-[7%] bottom-[1%] -z-10 h-[8%] rounded-[50%] bg-[#061a36]/40 blur-[14px]"
+        class="absolute inset-x-[7%] bottom-[1%] -z-10 h-[8%] rounded-[50%] bg-navy-950/40 blur-[14px]"
         aria-hidden="true"
         data-hero-sombra></span>
     </div>
