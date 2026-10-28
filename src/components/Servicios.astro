@@ -15,7 +15,7 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
 
 ---
 
-<section id="servicios" class="relative isolate overflow-hidden bg-marca-papel">
+<section id="servicios" class="relative isolate overflow-hidden bg-[#060911]">
   <div class="flex flex-col lg:flex-row min-h-0 lg:min-h-screen">
     <!-- Columna izquierda: Panel de contenido (~55% en desktop) -->
     <div
@@ -31,7 +31,7 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
         </div>
 
         <!-- 2. Párrafo descriptivo -->
-        <p class="revelar mt-3 lg:mt-5 max-w-xl text-base leading-relaxed text-pizarra-600 sm:text-lg">
+        <p class="revelar mt-3 lg:mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
           Diseñamos e instalamos infraestructura de carga adaptada a la realidad eléctrica de cada cliente, desde la obra civil hasta la puesta en marcha.
         </p>
 
@@ -46,9 +46,9 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
               return (
                 <li class="revelar group relative">
                   {/* Tarjeta interactiva en móvil y desktop */}
-                  <div class="flex items-start gap-4 sm:gap-4.5 rounded-2xl border border-[#cbc8bd] bg-marca-marfil p-4 transicion-suave duration-300 group-hover:border-marca-tinta/40 group-hover:bg-white sm:p-3.5">
+                  <div class="flex items-start gap-4 sm:gap-4.5 rounded-2xl border border-white/8 bg-[#080c15] p-4 transicion-suave duration-300 group-hover:border-marca-amarillo/35 group-hover:bg-[#10151e] sm:p-3.5">
                     {/* SVG en color nativo para conservar contraste, volumen y detalles. */}
-                    <div class="mt-0.5 grid size-14 sm:size-16 shrink-0 place-items-center rounded-2xl bg-navy-900 text-marca-amarillo transition-transform duration-300 group-hover:scale-105">
+                    <div class="mt-0.5 grid size-14 sm:size-16 shrink-0 place-items-center rounded-2xl bg-[#151a20] text-marca-amarillo transition-transform duration-300 group-hover:scale-105">
                       <img
                         src={src}
                         width="48"
@@ -64,16 +64,16 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
                     {/* Textos del servicio (jerarquía clara y alta legibilidad) */}
                     <div class="flex-1 min-w-0">
                       <div class="flex items-center justify-between gap-2">
-                        <h3 class="font-display text-lg sm:text-xl font-bold text-marca-tinta tracking-tight transicion-suave duration-300 group-hover:text-marca-naranja">
+                        <h3 class="font-display text-lg sm:text-xl font-bold text-white tracking-tight transicion-suave duration-300 group-hover:text-marca-amarillo">
                           {s.titulo}
                         </h3>
                         {/* Indicador sutil de toque en móvil */}
                         <Icono
                           nombre="flecha"
-                          class="size-4 shrink-0 text-marca-tinta opacity-70 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-marca-naranja sm:hidden"
+                          class="size-4 shrink-0 text-white opacity-70 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-marca-amarillo sm:hidden"
                         />
                       </div>
-                      <p class="mt-1.5 text-sm leading-relaxed text-pizarra-600 sm:text-[15px]">
+                      <p class="mt-1.5 text-sm leading-relaxed text-white/75 sm:text-[15px]">
                         {s.resumen}
                       </p>
                     </div>
@@ -123,9 +123,9 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
         loading="lazy"
       />
 
-      <!-- Velo degradado navy para suavizar el corte y dar contraste al título en móvil -->
+      <!-- El mismo negro de la sección funde la fotografía y da contraste al título. -->
       <div
-        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/65 to-transparent lg:bg-gradient-to-r lg:from-marca-papel lg:via-marca-papel/20 lg:to-transparent"
+        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#060911] via-[#060911]/65 to-transparent lg:bg-gradient-to-r lg:via-[#060911]/20 lg:to-transparent"
         aria-hidden="true"
       />
 
