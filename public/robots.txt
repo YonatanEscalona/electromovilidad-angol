@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://soluciones-integrales-angol.handymelon66.chatgpt.site/sitemap-index.xml

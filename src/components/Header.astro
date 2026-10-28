@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import logoOriginal from '../assets/logo-original-soluciones.png';
 import { negocio, linkWhatsApp } from '../data/negocio';
 import Icono from './Icono.astro';
+import { rutaLocal } from '../utils/rutas';
 
 interface Props {
   temaInicial?: 'claro' | 'oscuro';
@@ -13,11 +14,11 @@ const { temaInicial } = Astro.props;
 const esTemaClaro = temaInicial === 'claro';
 
 const enlaces = [
-  { href: '/#servicios', texto: 'Servicios' },
-  { href: '/#por-que-elegirnos', texto: 'Nuestro proceso' },
-  { href: '/galeria', texto: 'Galería' },
-  { href: '/#opiniones', texto: 'Soluciones' },
-  { href: '/#preguntas', texto: 'Preguntas' },
+  { href: rutaLocal('/#servicios'), texto: 'Servicios' },
+  { href: rutaLocal('/#por-que-elegirnos'), texto: 'Nuestro proceso' },
+  { href: rutaLocal('/galeria/'), texto: 'Galería' },
+  { href: rutaLocal('/#opiniones'), texto: 'Soluciones' },
+  { href: rutaLocal('/#preguntas'), texto: 'Preguntas' },
 ];
 ---
 
@@ -33,7 +34,7 @@ const enlaces = [
   data-hero-claro={esTemaClaro ? "true" : "false"}
 >
   <div class="contenedor flex h-20 items-center justify-between gap-4">
-    <a href="/" class="group flex items-center gap-2.5 sm:gap-3" aria-label={`${negocio.nombre} — inicio`}>
+    <a href={rutaLocal('/')} class="group flex items-center gap-2.5 sm:gap-3" aria-label={`${negocio.nombre} — inicio`}>
       <Image
         src={logoOriginal}
         alt="Logo original de Soluciones Integrales: casco amarillo y herramientas"
@@ -97,7 +98,7 @@ const enlaces = [
   class="fixed inset-0 z-[60] overflow-y-auto overscroll-contain bg-navy-950/95 pb-[env(safe-area-inset-bottom,0px)] backdrop-blur-xl lg:hidden"
 >
   <div class="contenedor flex h-20 items-center justify-between">
-    <a href="/" class="flex items-center gap-2.5">
+    <a href={rutaLocal('/')} class="flex items-center gap-2.5">
       <Image
         src={logoOriginal}
         alt="Logo original de Soluciones Integrales"

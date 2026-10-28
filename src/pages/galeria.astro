@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 import BotonWhatsApp from '../components/BotonWhatsApp.astro';
 import Icono from '../components/Icono.astro';
 import { negocio, linkWhatsApp } from '../data/negocio';
+import { rutaLocal } from '../utils/rutas';
 import {
   fotosGaleria,
   videosGaleria,
@@ -29,7 +30,7 @@ const descripcion =
     <div class="contenedor relative z-10">
       <!-- Breadcrumb / Migas de pan -->
       <nav class="flex items-center gap-2 text-xs text-humo-200/60 mb-6" aria-label="Ruta de navegación">
-        <a href="/" class="hover:text-naranjo-400 transition-colors flex items-center gap-1">
+        <a href={rutaLocal('/')} class="hover:text-naranjo-400 transition-colors flex items-center gap-1">
           <span>Inicio</span>
         </a>
         <span>/</span>
@@ -305,7 +306,7 @@ const descripcion =
             </a>
 
             <a
-              href="/"
+              href={rutaLocal('/')}
               class="w-full flex items-center justify-center gap-2 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 text-white px-5 py-3.5 text-xs sm:text-sm font-semibold transition-colors"
             >
               <span>Volver a la Página Principal</span>

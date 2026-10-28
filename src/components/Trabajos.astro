@@ -2,6 +2,7 @@
 import { Image } from 'astro:assets';
 import Icono from './Icono.astro';
 import { linkWhatsApp } from '../data/negocio';
+import { rutaLocal } from '../utils/rutas';
 
 import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../data/proyectos';
 
@@ -150,7 +151,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
 
       <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-end">
         <a
-          href="/galeria"
+          href={rutaLocal('/galeria/')}
           class="inline-flex flex-1 sm:flex-initial items-center justify-center gap-2.5 rounded-xl bg-azul-600 hover:bg-azul-500 text-navy-950 px-5 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-black/20 border border-azul-500/80 transition-all duration-300 hover:scale-[1.02] active:scale-98"
         >
           <Icono nombre="video" class="size-4 text-naranjo-300" />

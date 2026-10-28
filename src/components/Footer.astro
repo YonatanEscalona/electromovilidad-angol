@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import logoOriginal from '../assets/logo-original-soluciones.png';
 import { negocio, servicios } from '../data/negocio';
 import Icono from './Icono.astro';
+import { rutaLocal } from '../utils/rutas';
 
 const anio = new Date().getFullYear();
 const redes = [
@@ -69,7 +70,7 @@ const redes = [
         <ul class="mt-3 space-y-1">
           <li>
             <a
-              href="/galeria"
+              href={rutaLocal('/galeria/')}
               class="inline-flex items-center gap-1.5 py-1 text-sm font-semibold text-naranjo-400 transition-colors hover:text-naranjo-300"
             >
               <span>Galería de Proyectos</span>
@@ -80,7 +81,7 @@ const redes = [
             servicios.map((s) => (
               <li>
                 <a
-                  href={`/#servicios`}
+                  href={rutaLocal('/#servicios')}
                   class="inline-block py-1 text-sm text-humo-200/70 transition-colors hover:text-naranjo-400"
                 >
                   {s.titulo}

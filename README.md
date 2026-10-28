@@ -8,6 +8,16 @@ npm run dev
 
 Abrir http://localhost:4322. Para comprobar: npm run check. Para compilar: npm run build. La carpeta dist/ es la web lista para alojar.
 
+## GitHub Pages
+
+Repositorio: https://github.com/YonatanEscalona/electromovilidad-angol
+
+Página: https://yonatanescalona.github.io/electromovilidad-angol/
+
+Cada cambio en `main` activa `.github/workflows/deploy-pages.yml`, que instala las dependencias, compila con Node 22 y publica `dist/`. La configuración de Pages usa `SITE_URL=https://yonatanescalona.github.io` y `BASE_PATH=/electromovilidad-angol`; sin esas variables, el desarrollo local conserva la ruta raíz.
+
+Los enlaces internos, imágenes, metadatos, sitemap, robots y botones para compartir respetan la subcarpeta de publicación.
+
 ## Contenido y recursos
 - src/data/negocio.ts: información comercial, servicios, proceso y preguntas.
 - src/data/proyectos.ts: 10 imágenes de la galería con sus descripciones.
