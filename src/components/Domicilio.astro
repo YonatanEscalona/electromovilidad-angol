@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-import camioneta from '../assets/electromovilidad/hilux-amarilla.webp';
+import camioneta from '../assets/electromovilidad/hilux-logo-original.webp';
 import { linkWhatsApp } from '../data/negocio';
 import Icono from './Icono.astro';
 
@@ -12,8 +12,6 @@ const puntos = [
 ---
 
 <section id="domicilio" class="relative overflow-hidden py-20 lg:py-28 bg-navy-950">
-  <!-- Luz cálida de marca detrás del vehículo. -->
-  <div class="pointer-events-none absolute top-1/2 right-[-5%] size-[550px] rounded-full bg-azul-600/15 blur-[140px]" aria-hidden="true"></div>
 
   <div class="contenedor relative z-10">
     <div class="relative grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
@@ -44,7 +42,7 @@ const puntos = [
           href={linkWhatsApp('Hola, quiero solicitar una visita técnica para un cargador. Mi dirección es:')}
           target="_blank"
           rel="noopener"
-          class="mt-9 inline-flex items-center gap-2.5 rounded-full bg-naranjo-500 px-7 py-4 font-display font-extrabold text-navy-950 shadow-xl shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
+          class="mt-9 inline-flex items-center gap-2.5 rounded-full bg-naranjo-500 px-7 py-4 font-display font-extrabold text-navy-950 shadow-xl shadow-black/20 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
         >
           <Icono nombre="whatsapp" class="size-5" />
           Solicitar Visita Técnica
@@ -62,7 +60,7 @@ const puntos = [
           <div class="relative z-10 w-full" data-camioneta-auto>
             <Image
               src={camioneta}
-              alt="Toyota Hilux de Soluciones Integrales, rotulada en amarillo y negro — imagen referencial"
+              alt="Toyota Hilux blanca con el logo original del casco y herramientas de Soluciones Integrales — imagen referencial"
               widths={[420, 640, 900, 1200]}
               sizes="(min-width: 1024px) 560px, 90vw"
               class="w-full h-auto object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)] select-none pointer-events-none"

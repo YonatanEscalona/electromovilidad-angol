@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Infraestructura de carga para empresas</title>
-      <path d="M10 71V18l29-9 9 5v57Z" fill="#b6cce7"/>
-      <path d="M10 71V18l29-9v62Z" fill="#f4f8ff"/>
-      <path d="M17 24h5v7h-5Zm10-3h5v7h-5ZM17 38h5v7h-5Zm10-3h5v7h-5ZM17 52h5v7h-5Zm10-3h5v7h-5Z" fill="#3b82f6"/>
-      <path d="M28 71V61h7v10" fill="#102645"/>
-      <rect x="48" y="29" width="22" height="32" rx="5" fill="#b6cce7"/>
-      <rect x="45" y="27" width="22" height="32" rx="5" fill="#f4f8ff"/>
-      <rect x="49" y="32" width="14" height="15" rx="2" fill="#102645"/>
-      <path d="m57 34-5 7h5l-2 5 6-9h-5l2-3Z" fill="#7dd3fc"/>
-      <path d="M52 60v12h8V60" fill="#3b82f6"/>
-      <path d="M66 39h3c5 0 7 4 7 10v8c0 5-3 8-7 8s-6-3-6-7" stroke="#91b5e2" stroke-width="2.8"/>
-      <rect x="49" y="71" width="14" height="3" rx="1.5" fill="#f4f8ff"/>
-      <path d="M7 73h33" stroke="#91b5e2" stroke-width="2.4"/></svg>
+      <path d="M10 71V18l29-9 9 5v57Z" fill="#cbc8bd"/>
+      <path d="M10 71V18l29-9v62Z" fill="#f8f6f0"/>
+      <path d="M17 24h5v7h-5Zm10-3h5v7h-5ZM17 38h5v7h-5Zm10-3h5v7h-5ZM17 52h5v7h-5Zm10-3h5v7h-5Z" fill="#f3bd1c"/>
+      <path d="M28 71V61h7v10" fill="#171916"/>
+      <rect x="48" y="29" width="22" height="32" rx="5" fill="#cbc8bd"/>
+      <rect x="45" y="27" width="22" height="32" rx="5" fill="#f8f6f0"/>
+      <rect x="49" y="32" width="14" height="15" rx="2" fill="#171916"/>
+      <path d="m57 34-5 7h5l-2 5 6-9h-5l2-3Z" fill="#ffd33f"/>
+      <path d="M52 60v12h8V60" fill="#f3bd1c"/>
+      <path d="M66 39h3c5 0 7 4 7 10v8c0 5-3 8-7 8s-6-3-6-7" stroke="#9d9d91" stroke-width="2.8"/>
+      <rect x="49" y="71" width="14" height="3" rx="1.5" fill="#f8f6f0"/>
+      <path d="M7 73h33" stroke="#9d9d91" stroke-width="2.4"/></svg>

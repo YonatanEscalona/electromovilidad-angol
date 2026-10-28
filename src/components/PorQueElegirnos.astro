@@ -43,7 +43,7 @@ import fotoTaller from '../assets/electromovilidad/estacion.webp';
       {
         ventajas.map((v, i) => (
           <li class="revelar group">
-            <article class="relative flex h-full flex-col items-center overflow-hidden rounded-3xl border border-white/10 bg-navy-900/75 px-6 pb-8 pt-10 text-center backdrop-blur-md transicion-suave duration-500 ease-[var(--ease-salida)] hover:-translate-y-2 hover:border-naranjo-400/40 hover:bg-navy-900/95 hover:shadow-[0_16px_36px_-10px_rgba(243,189,28,0.18)]">
+            <article class="relative flex h-full flex-col items-center overflow-hidden rounded-3xl border border-white/10 bg-navy-900/75 px-6 pb-8 pt-10 text-center backdrop-blur-md transicion-suave duration-500 ease-[var(--ease-salida)] hover:-translate-y-2 hover:border-naranjo-400/40 hover:bg-navy-900/95 hover:shadow-[0_16px_36px_-10px_rgba(0,0,0,0.22)]">
               {/* Indicador de paso / número elegante en la esquina superior */}
               <span
                 class="absolute top-4 right-4 inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-navy-950/80 px-2.5 py-0.5 font-mono text-xs font-bold text-naranjo-400/80 backdrop-blur-sm transition-all duration-300 group-hover:border-naranjo-400/40 group-hover:bg-naranjo-500/15 group-hover:text-naranjo-300"
@@ -52,7 +52,7 @@ import fotoTaller from '../assets/electromovilidad/estacion.webp';
                 {String(i + 1).padStart(2, '0')}
               </span>
 
-              <span class="relative grid size-16 place-items-center rounded-2xl bg-gradient-to-br from-naranjo-500 to-naranjo-600 text-white shadow-lg shadow-naranjo-500/25 transition-transform duration-500 ease-[var(--ease-salida)] group-hover:scale-110 group-hover:-rotate-6">
+              <span class="relative grid size-16 place-items-center rounded-2xl bg-marca-amarillo text-marca-tinta shadow-lg shadow-black/20 transition-transform duration-500 ease-[var(--ease-salida)] group-hover:scale-110 group-hover:-rotate-6">
                 <Icono nombre={v.icono} class="size-8" />
               </span>
 
@@ -70,7 +70,7 @@ import fotoTaller from '../assets/electromovilidad/estacion.webp';
         href={linkWhatsApp()}
         target="_blank"
         rel="noopener"
-        class="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-naranjo-500 px-7 py-4 font-display font-extrabold text-navy-950 shadow-xl shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
+        class="inline-flex w-full sm:w-auto items-center justify-center gap-2.5 rounded-full bg-naranjo-500 px-7 py-4 font-display font-extrabold text-navy-950 shadow-xl shadow-black/20 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
       >
         <Icono nombre="whatsapp" class="size-5" />
         Solicitar Visita

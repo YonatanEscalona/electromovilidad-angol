@@ -15,7 +15,7 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
 
 ---
 
-<section id="servicios" class="relative isolate overflow-hidden bg-navy-950">
+<section id="servicios" class="relative isolate overflow-hidden bg-marca-papel">
   <div class="flex flex-col lg:flex-row min-h-0 lg:min-h-screen">
     <!-- Columna izquierda: Panel de contenido (~55% en desktop) -->
     <div
@@ -24,14 +24,14 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
       <div class="mx-auto w-full max-w-2xl lg:mx-0 lg:max-w-none">
         <!-- 1. Título h2 (Visible solo en desktop; en móvil se muestra integrado con la foto) -->
         <div class="revelar hidden lg:block pb-2">
-          <h2 class="titulo-3d-stack">
+          <h2 class="titulo-3d-stack" data-titulo-servicios>
             <span class="titulo-3d-sup text-[clamp(1.5rem,2.6vw,2.2rem)]">La energía correcta,</span>
             <span class="titulo-3d-inf text-[clamp(2.3rem,4.4vw,3.7rem)]">donde la necesites</span>
           </h2>
         </div>
 
         <!-- 2. Párrafo descriptivo -->
-        <p class="revelar mt-3 lg:mt-5 max-w-xl text-base leading-relaxed text-humo-200/85 sm:text-lg">
+        <p class="revelar mt-3 lg:mt-5 max-w-xl text-base leading-relaxed text-pizarra-600 sm:text-lg">
           Diseñamos e instalamos infraestructura de carga adaptada a la realidad eléctrica de cada cliente, desde la obra civil hasta la puesta en marcha.
         </p>
 
@@ -46,9 +46,9 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
               return (
                 <li class="revelar group relative">
                   {/* Tarjeta interactiva en móvil y desktop */}
-                  <div class="flex items-start gap-4 sm:gap-4.5 rounded-2xl border border-white/5 bg-navy-900/60 p-4 transition-all duration-300 group-hover:border-naranjo-400/30 group-hover:bg-navy-900/90 sm:border-white/5 sm:bg-navy-900/30 sm:p-3.5 sm:hover:bg-navy-900/70">
+                  <div class="flex items-start gap-4 sm:gap-4.5 rounded-2xl border border-[#cbc8bd] bg-marca-marfil p-4 transicion-suave duration-300 group-hover:border-marca-tinta/40 group-hover:bg-white sm:p-3.5">
                     {/* SVG en color nativo para conservar contraste, volumen y detalles. */}
-                    <div class="mt-0.5 grid size-14 sm:size-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-naranjo-500/20 via-naranjo-500/10 to-navy-800 border border-naranjo-500/30 text-naranjo-400 shadow-md shadow-naranjo-500/10 transition-all duration-300 group-hover:scale-105 group-hover:bg-naranjo-500/25 group-hover:border-naranjo-400/50 group-hover:shadow-naranjo-500/20">
+                    <div class="mt-0.5 grid size-14 sm:size-16 shrink-0 place-items-center rounded-2xl bg-navy-900 text-marca-amarillo transition-transform duration-300 group-hover:scale-105">
                       <img
                         src={src}
                         width="48"
@@ -64,16 +64,16 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
                     {/* Textos del servicio (jerarquía clara y alta legibilidad) */}
                     <div class="flex-1 min-w-0">
                       <div class="flex items-center justify-between gap-2">
-                        <h3 class="font-display text-lg sm:text-xl font-bold text-white tracking-tight transicion-suave duration-300 group-hover:text-naranjo-300">
+                        <h3 class="font-display text-lg sm:text-xl font-bold text-marca-tinta tracking-tight transicion-suave duration-300 group-hover:text-marca-naranja">
                           {s.titulo}
                         </h3>
                         {/* Indicador sutil de toque en móvil */}
                         <Icono
                           nombre="flecha"
-                          class="size-4 shrink-0 text-naranjo-400/60 opacity-70 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-naranjo-300 sm:hidden"
+                          class="size-4 shrink-0 text-marca-tinta opacity-70 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-marca-naranja sm:hidden"
                         />
                       </div>
-                      <p class="mt-1.5 text-sm leading-relaxed text-humo-200/80 sm:text-[15px]">
+                      <p class="mt-1.5 text-sm leading-relaxed text-pizarra-600 sm:text-[15px]">
                         {s.resumen}
                       </p>
                     </div>
@@ -101,7 +101,7 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
             href={linkWhatsApp()}
             target="_blank"
             rel="noopener"
-            class="inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-naranjo-500 px-8 py-4 font-display text-base font-extrabold text-navy-950 shadow-xl shadow-naranjo-500/25 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
+            class="inline-flex w-full sm:w-auto items-center justify-center gap-3 rounded-full bg-naranjo-500 px-8 py-4 font-display text-base font-extrabold text-navy-950 shadow-xl shadow-black/20 transicion-suave duration-300 hover:-translate-y-0.5 hover:bg-naranjo-400 hover:text-navy-950"
           >
             <Icono nombre="whatsapp" class="size-5" />
             Solicitar Visita
@@ -125,7 +125,7 @@ const iconos: Record<string,string> = { residencial:residencial.src, certificaci
 
       <!-- Velo degradado navy para suavizar el corte y dar contraste al título en móvil -->
       <div
-        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/65 to-transparent lg:bg-gradient-to-r lg:from-navy-950 lg:via-navy-950/40 lg:to-transparent"
+        class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/65 to-transparent lg:bg-gradient-to-r lg:from-marca-papel lg:via-marca-papel/20 lg:to-transparent"
         aria-hidden="true"
       />
 

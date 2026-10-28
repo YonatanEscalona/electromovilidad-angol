@@ -16,12 +16,12 @@
   /* ── Superficies oscuras cálidas ── */
   --color-navy-950: var(--color-marca-tinta);
   --color-navy-900: #242720;
-  --color-navy-800: #30342b;
-  --color-navy-700: #41463b;
-  --color-navy-600: #52594b;
-  --color-navy-500: #666e5f;
+  --color-navy-800: #242720;
+  --color-navy-700: #2b2d29;
+  --color-navy-600: #30322e;
+  --color-navy-500: #676961;
   --color-denim-400: var(--color-marca-amarillo);
-  --color-denim-300: #ffe58a;
+  --color-denim-300: var(--color-marca-amarillo);
 
   /* ── Alias de marca usados por la portada y la galería ── */
   --color-azul-900: var(--color-marca-tinta);
@@ -35,13 +35,13 @@
   /* ── Acentos amarillos sobre fondos oscuros ── */
   --color-naranjo-600: var(--color-marca-naranja);
   --color-naranjo-500: var(--color-marca-amarillo);
-  --color-naranjo-400: var(--color-marca-amarillo-claro);
-  --color-naranjo-300: #ffe58a;
+  --color-naranjo-400: var(--color-marca-amarillo);
+  --color-naranjo-300: var(--color-marca-amarillo-claro);
 
   /* ── Textos de Alta Legibilidad ── */
   --color-humo-50: #ffffff;
-  --color-humo-100: var(--color-marca-marfil);
-  --color-humo-200: #e1dfd6;
+  --color-humo-100: #ffffff;
+  --color-humo-200: #ffffff;
 
   --font-display: 'Archivo', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
@@ -175,7 +175,7 @@
 
 /* ───────────────────────────────────────────────
    EFECTO TIPOGRÁFICO 3D MULTICAPA (PALETA DEL SITIO)
-   Se conserva el relieve tipográfico con tonos marfil y amarillo de marca.
+   Colores sólidos de la referencia: blanco y amarillo, sin tonos intermedios.
    ─────────────────────────────────────────────── */
 @utility titulo-3d-stack {
   position: relative;
@@ -190,13 +190,9 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.01em;
-  background: linear-gradient(180deg, #ffffff 15%, var(--color-humo-200) 52%, rgba(243, 189, 28, 0.2) 94%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: #ffffff;
   transform: translateY(22%);
   z-index: 1;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.7));
 }
 
 @utility titulo-3d-inf {
@@ -205,19 +201,15 @@
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: -0.03em;
-  background: linear-gradient(
-    180deg,
-    #fff0b5 0%,
-    #ffd33f 32%,
-    #f3bd1c 68%,
-    #b97712 98%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  color: var(--color-marca-amarillo);
   position: relative;
   z-index: 2;
-  filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.65));
+}
+
+@media (width >= 1024px) {
+  #servicios [data-titulo-servicios] :is(.titulo-3d-sup, .titulo-3d-inf) {
+    color: var(--color-marca-tinta);
+  }
 }
 
 /* ───────────────────────────────────────────────

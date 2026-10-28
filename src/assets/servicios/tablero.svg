@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Tablero eléctrico con protecciones diferenciales</title>
-      <rect x="12" y="9" width="59" height="65" rx="7" fill="#b6cce7"/>
-      <rect x="9" y="6" width="59" height="65" rx="7" fill="#f4f8ff"/>
-      <rect x="15" y="13" width="47" height="9" rx="2" fill="#102645"/>
-      <path d="M21 17.5h16" stroke="#91b5e2" stroke-width="2"/><circle cx="56" cy="17.5" r="1.7" fill="#7dd3fc"/>
-      <rect x="15" y="27" width="47" height="30" rx="3" fill="#102645"/>
-      <rect x="18" y="30" width="12" height="24" rx="2" fill="#f4f8ff"/><path d="M22 32h4M22 51h4" stroke="#91b5e2" stroke-width="1.5"/><rect x="20" y="37" width="8" height="9" rx="1.2" fill="#3b82f6"/><path d="M21 39h6" stroke="#7dd3fc" stroke-width="1.3"/><rect x="32" y="30" width="12" height="24" rx="2" fill="#f4f8ff"/><path d="M36 32h4M36 51h4" stroke="#91b5e2" stroke-width="1.5"/><rect x="34" y="37" width="8" height="9" rx="1.2" fill="#102645"/><path d="M35 39h6" stroke="#91b5e2" stroke-width="1.3"/><rect x="46" y="30" width="12" height="24" rx="2" fill="#f4f8ff"/><path d="M50 32h4M50 51h4" stroke="#91b5e2" stroke-width="1.5"/><rect x="48" y="37" width="8" height="9" rx="1.2" fill="#102645"/><path d="M49 39h6" stroke="#91b5e2" stroke-width="1.3"/>
-      <path d="M20 63h37" stroke="#3b82f6" stroke-width="2.8"/>
-      <circle cx="23" cy="63" r="1" fill="#f4f8ff"/><circle cx="31" cy="63" r="1" fill="#f4f8ff"/><circle cx="39" cy="63" r="1" fill="#f4f8ff"/><circle cx="47" cy="63" r="1" fill="#f4f8ff"/><circle cx="55" cy="63" r="1" fill="#f4f8ff"/></svg>
+      <rect x="12" y="9" width="59" height="65" rx="7" fill="#cbc8bd"/>
+      <rect x="9" y="6" width="59" height="65" rx="7" fill="#f8f6f0"/>
+      <rect x="15" y="13" width="47" height="9" rx="2" fill="#171916"/>
+      <path d="M21 17.5h16" stroke="#9d9d91" stroke-width="2"/><circle cx="56" cy="17.5" r="1.7" fill="#ffd33f"/>
+      <rect x="15" y="27" width="47" height="30" rx="3" fill="#171916"/>
+      <rect x="18" y="30" width="12" height="24" rx="2" fill="#f8f6f0"/><path d="M22 32h4M22 51h4" stroke="#9d9d91" stroke-width="1.5"/><rect x="20" y="37" width="8" height="9" rx="1.2" fill="#f3bd1c"/><path d="M21 39h6" stroke="#ffd33f" stroke-width="1.3"/><rect x="32" y="30" width="12" height="24" rx="2" fill="#f8f6f0"/><path d="M36 32h4M36 51h4" stroke="#9d9d91" stroke-width="1.5"/><rect x="34" y="37" width="8" height="9" rx="1.2" fill="#171916"/><path d="M35 39h6" stroke="#9d9d91" stroke-width="1.3"/><rect x="46" y="30" width="12" height="24" rx="2" fill="#f8f6f0"/><path d="M50 32h4M50 51h4" stroke="#9d9d91" stroke-width="1.5"/><rect x="48" y="37" width="8" height="9" rx="1.2" fill="#171916"/><path d="M49 39h6" stroke="#9d9d91" stroke-width="1.3"/>
+      <path d="M20 63h37" stroke="#f3bd1c" stroke-width="2.8"/>
+      <circle cx="23" cy="63" r="1" fill="#f8f6f0"/><circle cx="31" cy="63" r="1" fill="#f8f6f0"/><circle cx="39" cy="63" r="1" fill="#f8f6f0"/><circle cx="47" cy="63" r="1" fill="#f8f6f0"/><circle cx="55" cy="63" r="1" fill="#f8f6f0"/></svg>

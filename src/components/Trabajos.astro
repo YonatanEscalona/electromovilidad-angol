@@ -9,7 +9,6 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
 
 <section id="trabajos" class="relative py-20 lg:py-28 overflow-hidden">
   <!-- Fondo con iluminación suave de taller sin cuadrícula -->
-  <div class="pointer-events-none absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[350px] bg-azul-600/10 blur-[120px] rounded-full" aria-hidden="true" />
 
   <div class="contenedor relative z-10">
     <!-- Encabezado de Sección optimizado SEO + Confianza -->
@@ -38,7 +37,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
             class:list={[
               'cursor-pointer rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 sm:text-sm flex items-center gap-1.5 focus-visible:outline-none',
               idx === 0
-                ? 'bg-azul-600 text-navy-950 shadow-lg shadow-azul-600/30 border border-azul-500'
+                ? 'bg-azul-600 text-navy-950 shadow-lg shadow-black/20 border border-azul-500'
                 : 'bg-navy-900/80 text-humo-200/80 border border-white/10 hover:border-naranjo-400/40 hover:text-white hover:bg-navy-800',
             ]}
           >
@@ -75,7 +74,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
               data-alt={t.alt}
               aria-label={`Ver detalle del trabajo: ${t.titulo}`}
             >
-              <figure class="tarjeta-borde relative h-full min-h-[260px] sm:min-h-[300px] overflow-hidden rounded-2xl bg-navy-900 group-hover:border-naranjo-400/50 transition-all duration-500 shadow-lg group-hover:shadow-azul-600/10">
+              <figure class="tarjeta-borde relative h-full min-h-[260px] sm:min-h-[300px] overflow-hidden rounded-2xl bg-navy-900 group-hover:border-naranjo-400/50 transition-all duration-500 shadow-lg group-hover:shadow-black/20">
                 <!-- Imagen real a todo color con zoom suave -->
                 <Image
                   src={t.img}
@@ -152,7 +151,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
       <div class="flex flex-wrap items-center gap-3 w-full lg:w-auto justify-end">
         <a
           href="/galeria"
-          class="inline-flex flex-1 sm:flex-initial items-center justify-center gap-2.5 rounded-xl bg-azul-600 hover:bg-azul-500 text-navy-950 px-5 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-azul-600/30 border border-azul-500/80 transition-all duration-300 hover:scale-[1.02] active:scale-98"
+          class="inline-flex flex-1 sm:flex-initial items-center justify-center gap-2.5 rounded-xl bg-azul-600 hover:bg-azul-500 text-navy-950 px-5 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-black/20 border border-azul-500/80 transition-all duration-300 hover:scale-[1.02] active:scale-98"
         >
           <Icono nombre="video" class="size-4 text-naranjo-300" />
           <span>Ver Galería Completa</span>
@@ -163,7 +162,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
           href={linkWhatsApp('Hola Soluciones Integrales, vi su galería y quiero cotizar una instalación de carga eléctrica.')}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex flex-1 sm:flex-initial items-center justify-center gap-2.5 rounded-xl bg-naranjo-500 px-5 py-3 text-xs sm:text-sm font-bold text-navy-950 hover:bg-naranjo-400 hover:text-navy-950 transition-all duration-300 shadow-lg shadow-naranjo-500/25 hover:shadow-naranjo-500/40 hover:scale-[1.02] active:scale-98"
+          class="inline-flex flex-1 sm:flex-initial items-center justify-center gap-2.5 rounded-xl bg-naranjo-500 px-5 py-3 text-xs sm:text-sm font-bold text-navy-950 hover:bg-naranjo-400 hover:text-navy-950 transition-all duration-300 shadow-lg shadow-black/20 hover:shadow-black/20 hover:scale-[1.02] active:scale-98"
         >
           <Icono nombre="whatsapp" class="size-4 text-navy-950" />
           <span>Cotizar por WhatsApp</span>
@@ -245,7 +244,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
               href="#"
               target="_blank"
               rel="noopener noreferrer"
-              class="w-full flex items-center justify-center gap-2 rounded-xl bg-azul-600 hover:bg-azul-500 text-navy-950 px-4 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-azul-600/30 transition-all duration-300 active:scale-98"
+              class="w-full flex items-center justify-center gap-2 rounded-xl bg-azul-600 hover:bg-azul-500 text-navy-950 px-4 py-3 text-xs sm:text-sm font-bold shadow-lg shadow-black/20 transition-all duration-300 active:scale-98"
             >
               <Icono nombre="whatsapp" class="size-4" />
               <span>Cotizar este trabajo por WhatsApp</span>
@@ -274,7 +273,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
         botonesFiltro.forEach((b) => {
           const activo = b === btn;
           if (activo) {
-            b.className = 'cursor-pointer rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 sm:text-sm flex items-center gap-1.5 focus-visible:outline-none bg-azul-600 text-navy-950 shadow-lg shadow-azul-600/30 border border-azul-500';
+            b.className = 'cursor-pointer rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 sm:text-sm flex items-center gap-1.5 focus-visible:outline-none bg-azul-600 text-navy-950 shadow-lg shadow-black/20 border border-azul-500';
           } else {
             b.className = 'cursor-pointer rounded-full px-4 py-2 text-xs font-semibold tracking-wide transition-all duration-300 sm:text-sm flex items-center gap-1.5 focus-visible:outline-none bg-navy-900/80 text-humo-200/80 border border-white/10 hover:border-naranjo-400/40 hover:text-white hover:bg-navy-800';
           }

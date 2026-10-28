@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Declaración TE-6 y cumplimiento normativo</title>
-      <path d="M19 9h27l13 13v43a5 5 0 0 1-5 5H19a5 5 0 0 1-5-5V14a5 5 0 0 1 5-5Z" fill="#b6cce7"/>
-      <path d="M16 7h27l13 13v43a5 5 0 0 1-5 5H16a5 5 0 0 1-5-5V12a5 5 0 0 1 5-5Z" fill="#f4f8ff"/>
-      <path d="M43 7v10a3 3 0 0 0 3 3h10Z" fill="#91b5e2"/>
-      <text x="19" y="33" fill="#102645" font-family="Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="-.5">TE6</text>
-      <path d="M20 43h23M20 50h17M20 57h12" stroke="#91b5e2" stroke-width="2.6"/>
-      <path d="m56 37 16 6v13c0 11-16 19-16 19s-16-8-16-19V43Z" fill="#3b82f6" stroke="#7dd3fc" stroke-width="2"/>
-      <path d="m48 56 5 5 11-12" stroke="#f4f8ff" stroke-width="4"/></svg>
+      <path d="M19 9h27l13 13v43a5 5 0 0 1-5 5H19a5 5 0 0 1-5-5V14a5 5 0 0 1 5-5Z" fill="#cbc8bd"/>
+      <path d="M16 7h27l13 13v43a5 5 0 0 1-5 5H16a5 5 0 0 1-5-5V12a5 5 0 0 1 5-5Z" fill="#f8f6f0"/>
+      <path d="M43 7v10a3 3 0 0 0 3 3h10Z" fill="#9d9d91"/>
+      <text x="19" y="33" fill="#171916" font-family="Arial,sans-serif" font-size="13" font-weight="800" letter-spacing="-.5">TE6</text>
+      <path d="M20 43h23M20 50h17M20 57h12" stroke="#9d9d91" stroke-width="2.6"/>
+      <path d="m56 37 16 6v13c0 11-16 19-16 19s-16-8-16-19V43Z" fill="#f3bd1c" stroke="#ffd33f" stroke-width="2"/>
+      <path d="m48 56 5 5 11-12" stroke="#f8f6f0" stroke-width="4"/></svg>

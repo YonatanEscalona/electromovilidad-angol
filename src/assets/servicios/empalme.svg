@@ -1,11 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Medidor eléctrico y aumento de capacidad</title>
-      <path d="M24 59v15m11-15v15m11-15v15" stroke="#91b5e2" stroke-width="4"/>
-      <rect x="16" y="12" width="38" height="53" rx="6" fill="#b6cce7"/>
-      <rect x="12" y="9" width="38" height="53" rx="6" fill="#f4f8ff"/>
-      <rect x="18" y="15" width="26" height="22" rx="4" fill="#102645"/>
-      <path d="M24 30v-4m7 4v-7m7 7V19" stroke="#7dd3fc" stroke-width="3"/>
-      <circle cx="31" cy="48" r="7" fill="#b6cce7"/>
-      <path d="m31 48 4-4" stroke="#102645" stroke-width="2.5"/><circle cx="31" cy="48" r="1.5" fill="#102645"/>
-      <path d="M61 66V30m-9 10 9-10 9 10" stroke="#7dd3fc" stroke-width="5"/>
-      <path d="M57 65h8" stroke="#3b82f6" stroke-width="5"/>
-      <circle cx="18" cy="56" r="1" fill="#91b5e2"/><circle cx="44" cy="56" r="1" fill="#91b5e2"/></svg>
+      <path d="M24 59v15m11-15v15m11-15v15" stroke="#9d9d91" stroke-width="4"/>
+      <rect x="16" y="12" width="38" height="53" rx="6" fill="#cbc8bd"/>
+      <rect x="12" y="9" width="38" height="53" rx="6" fill="#f8f6f0"/>
+      <rect x="18" y="15" width="26" height="22" rx="4" fill="#171916"/>
+      <path d="M24 30v-4m7 4v-7m7 7V19" stroke="#ffd33f" stroke-width="3"/>
+      <circle cx="31" cy="48" r="7" fill="#cbc8bd"/>
+      <path d="m31 48 4-4" stroke="#171916" stroke-width="2.5"/><circle cx="31" cy="48" r="1.5" fill="#171916"/>
+      <path d="M61 66V30m-9 10 9-10 9 10" stroke="#ffd33f" stroke-width="5"/>
+      <path d="M57 65h8" stroke="#f3bd1c" stroke-width="5"/>
+      <circle cx="18" cy="56" r="1" fill="#9d9d91"/><circle cx="44" cy="56" r="1" fill="#9d9d91"/></svg>

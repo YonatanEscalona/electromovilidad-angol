@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none" stroke-linecap="round" stroke-linejoin="round"><title>Wallbox residencial con cable de carga</title>
-      <path d="m8 24 17-14 17 14M13 21v18" stroke="#91b5e2" stroke-width="2.8"/>
-      <rect x="21" y="17" width="32" height="49" rx="8" fill="#b6cce7"/>
-      <rect x="17" y="14" width="32" height="49" rx="8" fill="#f4f8ff"/>
-      <rect x="23" y="21" width="20" height="24" rx="4" fill="#102645"/>
-      <path d="m35 25-8 11h7l-3 7 10-13h-7l3-5Z" fill="#7dd3fc"/>
-      <rect x="27" y="50" width="12" height="3" rx="1.5" fill="#3b82f6"/>
-      <path d="M46 36h8c10 0 14 6 14 15v9c0 9-4 14-10 14s-9-5-9-10v-3" stroke="#102645" stroke-width="6"/>
-      <path d="M48 36h6c9 0 12 6 12 15v9c0 8-3 12-8 12s-7-4-7-9" stroke="#91b5e2" stroke-width="2.4"/>
-      <path d="m46 55 5-2 5 10-6 3-5-8Z" fill="#3b82f6" stroke="#7dd3fc" stroke-width="1.4"/>
-      <path d="m47 55-2-5" stroke="#f4f8ff" stroke-width="3"/>
-      <circle cx="23" cy="58" r="1" fill="#91b5e2"/><circle cx="43" cy="58" r="1" fill="#91b5e2"/></svg>
+      <path d="m8 24 17-14 17 14M13 21v18" stroke="#9d9d91" stroke-width="2.8"/>
+      <rect x="21" y="17" width="32" height="49" rx="8" fill="#cbc8bd"/>
+      <rect x="17" y="14" width="32" height="49" rx="8" fill="#f8f6f0"/>
+      <rect x="23" y="21" width="20" height="24" rx="4" fill="#171916"/>
+      <path d="m35 25-8 11h7l-3 7 10-13h-7l3-5Z" fill="#ffd33f"/>
+      <rect x="27" y="50" width="12" height="3" rx="1.5" fill="#f3bd1c"/>
+      <path d="M46 36h8c10 0 14 6 14 15v9c0 9-4 14-10 14s-9-5-9-10v-3" stroke="#171916" stroke-width="6"/>
+      <path d="M48 36h6c9 0 12 6 12 15v9c0 8-3 12-8 12s-7-4-7-9" stroke="#9d9d91" stroke-width="2.4"/>
+      <path d="m46 55 5-2 5 10-6 3-5-8Z" fill="#f3bd1c" stroke="#ffd33f" stroke-width="1.4"/>
+      <path d="m47 55-2-5" stroke="#f8f6f0" stroke-width="3"/>
+      <circle cx="23" cy="58" r="1" fill="#9d9d91"/><circle cx="43" cy="58" r="1" fill="#9d9d91"/></svg>

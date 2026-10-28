@@ -32,7 +32,7 @@ const confianza = [
 ];
 ---
 
-<section id="inicio" class="relative isolate overflow-hidden bg-marca-marfil pt-20">
+<section id="inicio" class="relative isolate overflow-hidden bg-[#0b0e0c] pt-20">
   <!--
     ── Fondo geométrico ──────────────────────────────────────
     En teléfono la pieza vertical ancla abajo (ruta + asfalto) y se
@@ -48,13 +48,13 @@ const confianza = [
       aria-hidden="true"
       fetchpriority="high"
       decoding="async"
-      class="absolute inset-x-0 bottom-0 -z-20 h-[40%] w-full object-cover object-bottom grayscale [mask-image:linear-gradient(to_bottom,transparent_0,#000_22%)] lg:inset-0 lg:h-full lg:object-right lg:[mask-image:none]"
+      class="absolute inset-x-0 bottom-0 -z-20 h-[40%] w-full object-cover object-bottom grayscale brightness-75 [mask-image:linear-gradient(to_bottom,transparent_0,#000_22%)] lg:inset-0 lg:h-full lg:object-right lg:[mask-image:none]"
     />
   </picture>
 
-  <!-- Vela blanca: en escritorio el texto siempre cae sobre blanco -->
+  <!-- Velo oscuro de la web original, con texto blanco y acentos amarillos. -->
   <div
-    class="absolute inset-y-0 left-0 -z-10 hidden w-[60%] bg-[linear-gradient(90deg,#f8f6f0_0%,#f8f6f0_38%,rgba(248,246,240,0.92)_62%,rgba(248,246,240,0)_100%)] lg:block"
+    class="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(7,10,8,0.97)_0%,rgba(7,10,8,0.88)_35%,rgba(7,10,8,0.45)_62%,rgba(7,10,8,0.22)_100%)]"
     aria-hidden="true"
   >
   </div>
@@ -72,16 +72,16 @@ const confianza = [
     <!-- ── Columna de texto ──────────────────────────────────── -->
     <div class="lg:col-span-7 xl:col-span-6">
       <h1
-        class="hero-entra text-[clamp(2.2rem,5.5vw,4.3rem)] font-black tracking-[-0.03em] text-azul-900 leading-[1.1]"
+        class="hero-entra text-[clamp(2.2rem,5.5vw,4.3rem)] font-black tracking-[-0.03em] text-white leading-[1.1]"
       >
         Tu Vehículo Eléctrico,<br />
-        <span class="text-marca-naranja">Siempre Listo.</span>
+        <span class="text-marca-amarillo">Siempre Listo.</span>
       </h1>
 
       <p
-        class="hero-entra mt-4 max-w-[34rem] text-base leading-relaxed text-pizarra-600 sm:mt-5 sm:text-lg lg:max-w-[31rem] xl:max-w-[34rem]"
+        class="hero-entra mt-4 max-w-[34rem] text-base leading-relaxed text-white/85 sm:mt-5 sm:text-lg lg:max-w-[31rem] xl:max-w-[34rem]"
       >
-        Instalación de cargadores segura y certificada para hogares y empresas, con <strong class="font-bold text-marca-naranja">cumplimiento normativo SEC.</strong>
+        Instalación de cargadores segura y certificada para hogares y empresas, con <strong class="font-bold text-marca-amarillo">cumplimiento normativo SEC.</strong>
       </p>
 
       <div class="hero-entra mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:items-center sm:gap-4">
@@ -97,14 +97,14 @@ const confianza = [
 
         <button
           type="button" data-compartir
-          class="group hidden items-center gap-2.5 px-2 py-3 font-display text-sm font-extrabold text-azul-900 transition-colors duration-300 hover:text-marca-naranja sm:inline-flex sm:flex-1"
+          class="group hidden items-center gap-2.5 px-2 py-3 font-display text-sm font-extrabold text-white transition-colors duration-300 hover:text-marca-amarillo sm:inline-flex sm:flex-1"
         >
           Compartir Web
           <Icono
             nombre="compartir"
             class="size-4 transition-transform duration-300 group-hover:translate-y-1"
           />
-          <span class="hidden h-px flex-1 bg-azul-900/15 sm:block"></span>
+          <span class="hidden h-px flex-1 bg-white/20 sm:block"></span>
         </button>
       </div>
 
@@ -113,8 +113,8 @@ const confianza = [
       >
         {
           confianza.map((c) => (
-            <li class="flex items-center gap-1.5 font-semibold text-pizarra-800 sm:gap-2.5 sm:font-medium">
-              <Icono nombre={c.icono} class="size-[18px] shrink-0 text-marca-naranja sm:size-[22px]" />
+            <li class="flex items-center gap-1.5 font-semibold text-white/85 sm:gap-2.5 sm:font-medium">
+              <Icono nombre={c.icono} class="size-[18px] shrink-0 text-marca-amarillo sm:size-[22px]" />
               <span class="sm:hidden">{c.corto}</span>
               <span class="hidden sm:inline">{c.texto}</span>
             </li>
