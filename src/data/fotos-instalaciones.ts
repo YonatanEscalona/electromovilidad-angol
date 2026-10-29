@@ -1,0 +1,99 @@
+import type { FotoItem } from './proyectos';
+import foto01 from '../assets/proyectos-reales/instalacion-01.webp';
+import foto02 from '../assets/proyectos-reales/instalacion-02.webp';
+import foto03 from '../assets/proyectos-reales/instalacion-03.webp';
+import foto04 from '../assets/proyectos-reales/instalacion-04.webp';
+import foto05 from '../assets/proyectos-reales/instalacion-05.webp';
+import foto06 from '../assets/proyectos-reales/instalacion-06.webp';
+import foto07 from '../assets/proyectos-reales/instalacion-07.webp';
+import foto08 from '../assets/proyectos-reales/instalacion-08.webp';
+import foto09 from '../assets/proyectos-reales/instalacion-09.webp';
+import foto10 from '../assets/proyectos-reales/instalacion-10.webp';
+import foto11 from '../assets/proyectos-reales/instalacion-11.webp';
+import foto12 from '../assets/proyectos-reales/instalacion-12.webp';
+import foto13 from '../assets/proyectos-reales/instalacion-13.webp';
+import foto14 from '../assets/proyectos-reales/instalacion-14.webp';
+import foto15 from '../assets/proyectos-reales/instalacion-15.webp';
+import foto16 from '../assets/proyectos-reales/instalacion-16.webp';
+import foto17 from '../assets/proyectos-reales/instalacion-17.webp';
+import foto18 from '../assets/proyectos-reales/instalacion-18.webp';
+import foto19 from '../assets/proyectos-reales/instalacion-19.webp';
+import foto20 from '../assets/proyectos-reales/instalacion-20.webp';
+import foto21 from '../assets/proyectos-reales/instalacion-21.webp';
+import foto22 from '../assets/proyectos-reales/instalacion-22.webp';
+import foto23 from '../assets/proyectos-reales/instalacion-23.webp';
+import foto24 from '../assets/proyectos-reales/instalacion-24.webp';
+import foto25 from '../assets/proyectos-reales/instalacion-25.webp';
+import foto26 from '../assets/proyectos-reales/instalacion-26.webp';
+import foto27 from '../assets/proyectos-reales/instalacion-27.webp';
+import foto28 from '../assets/proyectos-reales/instalacion-28.webp';
+import foto29 from '../assets/proyectos-reales/instalacion-29.webp';
+import foto30 from '../assets/proyectos-reales/instalacion-30.webp';
+import foto31 from '../assets/proyectos-reales/instalacion-31.webp';
+import foto32 from '../assets/proyectos-reales/instalacion-32.webp';
+import foto33 from '../assets/proyectos-reales/instalacion-33.webp';
+import foto34 from '../assets/proyectos-reales/instalacion-34.webp';
+import foto35 from '../assets/proyectos-reales/instalacion-35.webp';
+import foto36 from '../assets/proyectos-reales/instalacion-36.webp';
+import foto37 from '../assets/proyectos-reales/instalacion-37.webp';
+import foto38 from '../assets/proyectos-reales/instalacion-38.webp';
+import foto39 from '../assets/proyectos-reales/instalacion-39.webp';
+import foto40 from '../assets/proyectos-reales/instalacion-40.webp';
+import foto41 from '../assets/proyectos-reales/instalacion-41.webp';
+import foto42 from '../assets/proyectos-reales/instalacion-42.webp';
+import foto43 from '../assets/proyectos-reales/instalacion-43.webp';
+import foto44 from '../assets/proyectos-reales/instalacion-44.webp';
+import foto45 from '../assets/proyectos-reales/instalacion-45.webp';
+import foto46 from '../assets/proyectos-reales/instalacion-46.webp';
+import foto47 from '../assets/proyectos-reales/instalacion-47.webp';
+
+// Fotografías aportadas por el cliente en el archivo de WhatsApp del 28/10/2026.
+export const fotosInstalaciones: FotoItem[] = [
+  {"id": "instalacion-01", "alt": "Tablero blanco abierto con interruptores, instalado sobre el revestimiento del muro.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Tablero de distribución", "resumen": "Tablero blanco abierto con interruptores, instalado sobre el revestimiento del muro.", "tag": "Foto de instalación", "img": foto01},
+  {"id": "instalacion-02", "alt": "Detalle del cableado y los componentes montados sobre la placa roja del gabinete.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Conexiones dentro del gabinete", "resumen": "Detalle del cableado y los componentes montados sobre la placa roja del gabinete.", "tag": "Foto de instalación", "img": foto02},
+  {"id": "instalacion-03", "alt": "Vista del tablero de distribución y su ubicación en el muro.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Montaje del tablero mural", "resumen": "Vista del tablero de distribución y su ubicación en el muro.", "tag": "Foto de instalación", "img": foto03},
+  {"id": "instalacion-04", "alt": "Gabinete metálico abierto con canalizaciones sobre el revestimiento blanco.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Gabinete y canalización exterior", "resumen": "Gabinete metálico abierto con canalizaciones sobre el revestimiento blanco.", "tag": "Foto de instalación", "img": foto04},
+  {"id": "instalacion-05", "alt": "Vista interior del gabinete con dos filas de interruptores y conexión de la puerta.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Protecciones del gabinete", "resumen": "Vista interior del gabinete con dos filas de interruptores y conexión de la puerta.", "tag": "Foto de instalación", "img": foto05},
+  {"id": "instalacion-06", "alt": "Distribución de conductores y componentes sobre la placa de montaje.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Cableado del gabinete exterior", "resumen": "Distribución de conductores y componentes sobre la placa de montaje.", "tag": "Foto de instalación", "img": foto06},
+  {"id": "instalacion-07", "alt": "Trabajo de montaje en altura con escalera frente al gabinete exterior.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Instalación en terreno", "resumen": "Trabajo de montaje en altura con escalera frente al gabinete exterior.", "tag": "Foto de instalación", "img": foto07},
+  {"id": "instalacion-08", "alt": "Detalle del tablero mural junto al equipo de carga.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Cargador y tablero auxiliar", "resumen": "Detalle del tablero mural junto al equipo de carga.", "tag": "Foto de instalación", "img": foto08},
+  {"id": "instalacion-09", "alt": "Primer plano de los interruptores instalados en el tablero blanco.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Detalle de interruptores", "resumen": "Primer plano de los interruptores instalados en el tablero blanco.", "tag": "Foto de instalación", "img": foto09},
+  {"id": "instalacion-10", "alt": "Equipo Wallbox junto a su tablero con señalización de riesgo eléctrico.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Wallbox con tablero de protección", "resumen": "Equipo Wallbox junto a su tablero con señalización de riesgo eléctrico.", "tag": "Foto de instalación", "img": foto10},
+  {"id": "instalacion-11", "alt": "Vista del cargador Wallbox y el tablero instalados sobre el muro.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Conjunto de carga mural", "resumen": "Vista del cargador Wallbox y el tablero instalados sobre el muro.", "tag": "Foto de instalación", "img": foto11},
+  {"id": "instalacion-12", "alt": "Otra vista del equipo de carga y sus protecciones.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Punto de carga en el muro", "resumen": "Otra vista del equipo de carga y sus protecciones.", "tag": "Foto de instalación", "img": foto12},
+  {"id": "instalacion-13", "alt": "Vista general del cargador y el tablero sobre el revestimiento de la vivienda.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Instalación Wallbox residencial", "resumen": "Vista general del cargador y el tablero sobre el revestimiento de la vivienda.", "tag": "Foto de instalación", "img": foto13},
+  {"id": "instalacion-14", "alt": "Detalle de la cubierta del tablero con advertencia de riesgo eléctrico.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Señalización del tablero", "resumen": "Detalle de la cubierta del tablero con advertencia de riesgo eléctrico.", "tag": "Foto de instalación", "img": foto14},
+  {"id": "instalacion-15", "alt": "Gabinete abierto con componentes y cableado durante la instalación.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Montaje eléctrico en proceso", "resumen": "Gabinete abierto con componentes y cableado durante la instalación.", "tag": "Foto de instalación", "img": foto15},
+  {"id": "instalacion-16", "alt": "Detalle interior del gabinete con interruptores y recorridos del cableado.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Distribución de conductores", "resumen": "Detalle interior del gabinete con interruptores y recorridos del cableado.", "tag": "Foto de instalación", "img": foto16},
+  {"id": "instalacion-17", "alt": "Cargador mural con cable recogido junto a un gabinete metálico.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Estación de carga residencial", "resumen": "Cargador mural con cable recogido junto a un gabinete metálico.", "tag": "Foto de instalación", "img": foto17},
+  {"id": "instalacion-18", "alt": "Caja mural abierta con conductores durante el montaje.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Preparación de conexiones", "resumen": "Caja mural abierta con conductores durante el montaje.", "tag": "Foto de instalación", "img": foto18},
+  {"id": "instalacion-19", "alt": "Vista de los cables preparados en la caja de conexiones abierta.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Conductores en la caja mural", "resumen": "Vista de los cables preparados en la caja de conexiones abierta.", "tag": "Foto de instalación", "img": foto19},
+  {"id": "instalacion-20", "alt": "Gabinete abierto con dos filas de interruptores en su cubierta interior.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Frente del tablero eléctrico", "resumen": "Gabinete abierto con dos filas de interruptores en su cubierta interior.", "tag": "Foto de instalación", "img": foto20},
+  {"id": "instalacion-21", "alt": "Componentes y conexiones dentro del gabinete sobre la placa roja.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Detalle del montaje eléctrico", "resumen": "Componentes y conexiones dentro del gabinete sobre la placa roja.", "tag": "Foto de instalación", "img": foto21},
+  {"id": "instalacion-22", "alt": "Conjunto de carga con gabinete metálico y canalización superior.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Cargador y gabinete señalizado", "resumen": "Conjunto de carga con gabinete metálico y canalización superior.", "tag": "Foto de instalación", "img": foto22},
+  {"id": "instalacion-23", "alt": "Vista general de las cajas y tuberías que llegan al conjunto de carga.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Recorrido de la canalización", "resumen": "Vista general de las cajas y tuberías que llegan al conjunto de carga.", "tag": "Foto de instalación", "img": foto23},
+  {"id": "instalacion-24", "alt": "Caja abierta con cables y conectores durante los trabajos.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Conexiones durante el montaje", "resumen": "Caja abierta con cables y conectores durante los trabajos.", "tag": "Foto de instalación", "img": foto24},
+  {"id": "instalacion-25", "alt": "Vista exterior de los vehículos junto al lugar de trabajo.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Registro de la visita en terreno", "resumen": "Vista exterior de los vehículos junto al lugar de trabajo.", "tag": "Foto de instalación", "img": foto25},
+  {"id": "instalacion-26", "alt": "Vista completa del cargador y el gabinete instalados junto a una ventana.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Punto de carga junto a la vivienda", "resumen": "Vista completa del cargador y el gabinete instalados junto a una ventana.", "tag": "Foto de instalación", "img": foto26},
+  {"id": "instalacion-27", "alt": "Detalle del gabinete con señalización eléctrica junto al cable de carga.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Gabinete de la estación de carga", "resumen": "Detalle del gabinete con señalización eléctrica junto al cable de carga.", "tag": "Foto de instalación", "img": foto27},
+  {"id": "instalacion-28", "alt": "Vista interior del tablero y de su cubierta metálica abierta.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Revisión del gabinete", "resumen": "Vista interior del tablero y de su cubierta metálica abierta.", "tag": "Foto de instalación", "img": foto28},
+  {"id": "instalacion-29", "alt": "Rollos de cable e instrumento de medición preparados en el exterior.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Preparación del tendido eléctrico", "resumen": "Rollos de cable e instrumento de medición preparados en el exterior.", "tag": "Foto de instalación", "img": foto29},
+  {"id": "instalacion-30", "alt": "Vista del cableado y los equipos utilizados durante el trabajo en terreno.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Materiales y equipo de medición", "resumen": "Vista del cableado y los equipos utilizados durante el trabajo en terreno.", "tag": "Foto de instalación", "img": foto30},
+  {"id": "instalacion-31", "alt": "Equipo de carga abierto con su electrónica visible durante la instalación.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Interior del cargador durante el montaje", "resumen": "Equipo de carga abierto con su electrónica visible durante la instalación.", "tag": "Foto de instalación", "img": foto31},
+  {"id": "instalacion-32", "alt": "Caja metálica de canalización con conductores y cinta de medir.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Detalle de la caja de paso", "resumen": "Caja metálica de canalización con conductores y cinta de medir.", "tag": "Foto de instalación", "img": foto32},
+  {"id": "instalacion-33", "alt": "Gabinete abierto, canalización y cable de carga en una misma vista.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Tablero junto al punto de carga", "resumen": "Gabinete abierto, canalización y cable de carga en una misma vista.", "tag": "Foto de instalación", "img": foto33},
+  {"id": "instalacion-34", "alt": "Equipo fijado al muro con su alimentación pendiente de conexión.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Montaje del cargador mural", "resumen": "Equipo fijado al muro con su alimentación pendiente de conexión.", "tag": "Foto de instalación", "img": foto34},
+  {"id": "instalacion-35", "alt": "Gabinete con componentes en montaje y cableado aún en proceso.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Preparación del tablero", "resumen": "Gabinete con componentes en montaje y cableado aún en proceso.", "tag": "Foto de instalación", "img": foto35},
+  {"id": "instalacion-36", "alt": "Cargador mural junto al medidor y la canalización exterior de la vivienda.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Carga eléctrica en casa", "resumen": "Cargador mural junto al medidor y la canalización exterior de la vivienda.", "tag": "Foto de instalación", "img": foto36},
+  {"id": "instalacion-37", "alt": "Vista de la fachada de la vivienda y la ubicación de su medidor.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Evaluación del entorno de instalación", "resumen": "Vista de la fachada de la vivienda y la ubicación de su medidor.", "tag": "Foto de instalación", "img": foto37},
+  {"id": "instalacion-38", "alt": "Medidor eléctrico con canalización vertical junto al revestimiento exterior.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Medidor y recorrido exterior", "resumen": "Medidor eléctrico con canalización vertical junto al revestimiento exterior.", "tag": "Foto de instalación", "img": foto38},
+  {"id": "instalacion-39", "alt": "Vista del cargador, el cable y el medidor instalados en el exterior cubierto.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Punto de carga bajo el alero", "resumen": "Vista del cargador, el cable y el medidor instalados en el exterior cubierto.", "tag": "Foto de instalación", "img": foto39},
+  {"id": "instalacion-40", "alt": "Cargador fijado al muro con el cable de alimentación visible durante el montaje.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Equipo de carga en instalación", "resumen": "Cargador fijado al muro con el cable de alimentación visible durante el montaje.", "tag": "Foto de instalación", "img": foto40},
+  {"id": "instalacion-41", "alt": "Caja mural abierta con conductores antes de completar las conexiones.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Preparación de la caja eléctrica", "resumen": "Caja mural abierta con conductores antes de completar las conexiones.", "tag": "Foto de instalación", "img": foto41},
+  {"id": "instalacion-42", "alt": "Vista exterior de la vivienda, el medidor y el acceso cubierto.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Revisión de la fachada", "resumen": "Vista exterior de la vivienda, el medidor y el acceso cubierto.", "tag": "Foto de instalación", "img": foto42},
+  {"id": "instalacion-43", "alt": "Vista de la fachada y la posición del medidor junto a la ventana.", "categoria": "infraestructura", "categoriaLabel": "Infraestructura", "titulo": "Ubicación del suministro eléctrico", "resumen": "Vista de la fachada y la posición del medidor junto a la ventana.", "tag": "Foto de instalación", "img": foto43},
+  {"id": "instalacion-44", "alt": "Tablero blanco sin cubierta con sus interruptores y conexiones visibles.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Cableado del tablero mural", "resumen": "Tablero blanco sin cubierta con sus interruptores y conexiones visibles.", "tag": "Foto de instalación", "img": foto44},
+  {"id": "instalacion-45", "alt": "Primer plano de los conductores y los interruptores antes de colocar la cubierta.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Terminaciones del tablero", "resumen": "Primer plano de los conductores y los interruptores antes de colocar la cubierta.", "tag": "Foto de instalación", "img": foto45},
+  {"id": "instalacion-46", "alt": "Tablero en proceso de montaje sobre el muro, junto al banco de trabajo.", "categoria": "protecciones", "categoriaLabel": "Tableros y Protecciones", "titulo": "Instalación del tablero auxiliar", "resumen": "Tablero en proceso de montaje sobre el muro, junto al banco de trabajo.", "tag": "Foto de instalación", "img": foto46},
+  {"id": "instalacion-47", "alt": "Cargador, cable de carga, canalizaciones y medidor sobre el revestimiento blanco.", "categoria": "residencial", "categoriaLabel": "Carga Residencial", "titulo": "Vista del conjunto de carga", "resumen": "Cargador, cable de carga, canalizaciones y medidor sobre el revestimiento blanco.", "tag": "Foto de instalación", "img": foto47},
+];

@@ -1,3 +1,4 @@
+import { fotosInstalaciones } from './fotos-instalaciones';
 import type { ImageMetadata } from 'astro';
 import canalizacion from '../assets/electromovilidad/canalizacion.webp';
 import conexiones from '../assets/electromovilidad/conexiones.webp';
@@ -10,7 +11,7 @@ import componentes from '../assets/electromovilidad/componentes.webp';
 import cableado from '../assets/electromovilidad/cableado.webp';
 import obra from '../assets/electromovilidad/obra.webp';
 export interface FotoItem { id:string; img:ImageMetadata; alt:string; categoria:string; categoriaLabel:string; titulo:string; resumen:string; tag:string; destacada?:boolean }
-export const fotosGaleria:FotoItem[] = [
+const fotosReferenciales:FotoItem[] = [
   { id:'estacion', img:estacion, alt:'Imagen referencial de una estación residencial de carga para vehículo eléctrico', categoria:'residencial', categoriaLabel:'Carga Residencial', titulo:'Estación completa residencial', resumen:'Infraestructura de carga integrada al garaje, desde la alimentación eléctrica hasta el wallbox.', tag:'Imagen referencial', destacada:true },
   { id:'canalizacion', img:canalizacion, alt:'Detalle fotográfico referencial de una canalización eléctrica exterior', categoria:'infraestructura', categoriaLabel:'Infraestructura', titulo:'Canalización exterior', resumen:'Recorridos protegidos y fijaciones ordenadas para la alimentación del equipo de carga.', tag:'Canalización' },
   { id:'conexiones', img:conexiones, alt:'Imagen referencial de una caja de conexiones eléctricas', categoria:'infraestructura', categoriaLabel:'Conexiones', titulo:'Caja de conexiones', resumen:'Organización de los conductores y conexiones protegidas en el recorrido eléctrico.', tag:'Conexiones' },
@@ -22,7 +23,33 @@ export const fotosGaleria:FotoItem[] = [
   { id:'cableado', img:cableado, alt:'Fotografía referencial de conductores y terminales en un tablero', categoria:'infraestructura', categoriaLabel:'Cableado', titulo:'Cableado y terminaciones', resumen:'Conductores identificados y terminaciones organizadas para una instalación segura.', tag:'Terminaciones' },
   { id:'obra', img:obra, alt:'Fotografía referencial de una obra de instalación de cargador en proceso', categoria:'infraestructura', categoriaLabel:'Instalación', titulo:'Obra en proceso', resumen:'Trabajo de obra civil y eléctrica, desde los soportes hasta la puesta en marcha.', tag:'Obra civil y eléctrica' },
 ];
-export const categoriasGaleria = [
-  {id:'todos',label:'Todos los proyectos',conteo:fotosGaleria.length},
-  ...[['residencial','Residencial'],['infraestructura','Infraestructura'],['protecciones','Protecciones'],['empresas','Empresas']].map(([id,label])=>({id,label,conteo:fotosGaleria.filter(f=>f.categoria===id).length})),
+
+// La portada mantiene la grilla original con una selección de diez fotos.
+const seleccionPortada = [36, 17, 10, 16, 7, 23, 29, 32, 45, 4];
+export const fotosPortada: FotoItem[] = seleccionPortada.map((numero, indice) => ({
+  ...fotosInstalaciones[numero - 1], destacada: indice === 0,
+}));
+const idsPortada = new Set(fotosPortada.map(foto => foto.id));
+export const fotosGaleria: FotoItem[] = [
+  ...fotosPortada,
+  ...fotosInstalaciones.filter(foto => !idsPortada.has(foto.id)),
+  ...fotosReferenciales.map(foto => ({
+    ...foto, categoria: 'referencias', categoriaLabel: 'Imagen referencial', tag: 'Referencia IA', destacada: false,
+  })),
 ];
+export const cantidadFotosInstalaciones = fotosInstalaciones.length;
+
+function categoriasDe(fotos: FotoItem[]) {
+  return [
+    { id: 'todos', label: 'Todas las fotos', conteo: fotos.length },
+    ...[
+      ['residencial', 'Residencial'],
+      ['infraestructura', 'Infraestructura'],
+      ['protecciones', 'Protecciones'],
+      ['referencias', 'Referencias IA'],
+    ].map(([id, label]) => ({ id, label, conteo: fotos.filter(foto => foto.categoria === id).length }))
+      .filter(categoria => categoria.conteo > 0),
+  ];
+}
+export const categoriasGaleria = categoriasDe(fotosGaleria);
+export const categoriasPortada = categoriasDe(fotosPortada);

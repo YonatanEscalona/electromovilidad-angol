@@ -4,6 +4,7 @@ import logoOriginal from '../assets/logo-original-soluciones.png';
 import { negocio, servicios } from '../data/negocio';
 import Icono from './Icono.astro';
 import { rutaLocal } from '../utils/rutas';
+import { fotosGaleria } from '../data/proyectos';
 
 const anio = new Date().getFullYear();
 const redes = [
@@ -74,7 +75,7 @@ const redes = [
               class="inline-flex items-center gap-1.5 py-1 text-sm font-semibold text-naranjo-400 transition-colors hover:text-naranjo-300"
             >
               <span>Galería de Proyectos</span>
-              <span class="rounded bg-naranjo-400/20 px-1.5 py-0.2 text-[10px] font-bold">10</span>
+              <span class="rounded bg-naranjo-400/20 px-1.5 py-0.2 text-[10px] font-bold">{fotosGaleria.length}</span>
             </a>
           </li>
           {

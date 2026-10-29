@@ -9,6 +9,7 @@ import { negocio, linkWhatsApp } from '../data/negocio';
 import { rutaLocal } from '../utils/rutas';
 import {
   fotosGaleria,
+  cantidadFotosInstalaciones,
   videosGaleria,
   categoriasGaleria,
 } from '../data/galeria';
@@ -17,7 +18,7 @@ const titulo = `Galería de Proyectos — ${negocio.nombre} en ${negocio.direcci
 const descripcion =
   'Galería de infraestructura de carga eléctrica en ' +
   negocio.direccion.comuna +
-  ': cargadores, canalizaciones, tableros y conexiones. Imágenes referenciales.';
+  ': fotografías de cargadores, canalizaciones, tableros y conexiones durante las instalaciones.';
 ---
 
 <Base titulo={titulo} descripcion={descripcion}>
@@ -41,7 +42,7 @@ const descripcion =
       <header class="mx-auto max-w-4xl text-center">
         <div class="inline-flex items-center gap-2 rounded-full border border-naranjo-400/30 bg-naranjo-400/10 px-4 py-1.5 text-xs font-bold tracking-[0.2em] text-naranjo-400 uppercase shadow-inner">
           <span class="size-2 rounded-full bg-naranjo-400 animate-pulse"></span>
-          Electromovilidad · Imágenes Referenciales
+          Electromovilidad · Nuestro trabajo
         </div>
 
         <h1 class="mt-4 text-[clamp(2.2rem,5vw,3.75rem)] font-display font-extrabold text-white leading-tight">
@@ -49,14 +50,14 @@ const descripcion =
         </h1>
 
         <p class="mx-auto mt-4 max-w-2xl text-base text-humo-200/85 sm:text-lg leading-relaxed">
-          Explora detalles de infraestructura de carga: equipos, canalizaciones, conexiones y protecciones. Imágenes referenciales creadas con IA; no corresponden a obras ejecutadas.
+          Recorre nuestras instalaciones de carga eléctrica: equipos, canalizaciones, conexiones y protecciones. También puedes explorar las imágenes de referencia en el filtro «Referencias IA».
         </p>
 
         <!-- Métricas Rápidas de Confianza -->
         <div class="mt-8 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-xs sm:text-sm text-humo-100">
           <div class="flex items-center gap-2 rounded-xl bg-navy-900/80 border border-white/10 px-4 py-2 backdrop-blur-md">
             <Icono nombre="camara" class="size-4 text-naranjo-400" />
-            <span><strong class="text-white font-bold">{fotosGaleria.length}</strong> Imágenes de referencia</span>
+            <span><strong class="text-white font-bold">{cantidadFotosInstalaciones}</strong> Fotos de instalaciones</span>
           </div>
           <div hidden class="flex items-center gap-2 rounded-xl bg-navy-900/80 border border-white/10 px-4 py-2 backdrop-blur-md">
             <Icono nombre="video" class="size-4 text-naranjo-400" />
@@ -386,10 +387,6 @@ const descripcion =
                   <li class="flex items-center gap-1.5">
                     <Icono nombre="check" class="size-3 text-verde-400 shrink-0" />
                     <span>Protecciones y equipamiento según proyecto</span>
-                  </li>
-                  <li class="flex items-center gap-1.5">
-                    <Icono nombre="check" class="size-3 text-verde-400 shrink-0" />
-                    <span>Imagen referencial creada con IA</span>
                   </li>
                 </ul>
               </div>

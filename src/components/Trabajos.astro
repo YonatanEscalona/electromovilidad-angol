@@ -4,7 +4,7 @@ import Icono from './Icono.astro';
 import { linkWhatsApp } from '../data/negocio';
 import { rutaLocal } from '../utils/rutas';
 
-import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../data/proyectos';
+import { fotosPortada as trabajos, categoriasPortada as categorias, cantidadFotosInstalaciones } from '../data/proyectos';
 
 ---
 
@@ -24,7 +24,7 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
       </h2>
       
       <p class="revelar mx-auto mt-4 max-w-xl text-base text-humo-200/85 sm:text-lg">
-        Calidad, orden y seguridad en cada detalle, desde la obra civil hasta el tablero eléctrico. Imágenes referenciales creadas con IA para mostrar nuestras soluciones.
+        Conoce nuestras instalaciones: cargadores, canalizaciones, conexiones y tableros eléctricos. Fotografías del trabajo en terreno, desde el montaje hasta los detalles del punto de carga.
       </p>
     </header>
 
@@ -81,8 +81,8 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
                   src={t.img}
                   alt={t.alt}
                   widths={[400, 700, 1100]}
-                  sizes="(min-width: 1024px) 340px, (min-width: 640px) 50vw, 95vw"
-                  class="h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
+                  sizes={t.destacada ? "(min-width: 1024px) 700px, (min-width: 640px) 95vw, 95vw" : "(min-width: 1024px) 340px, (min-width: 640px) 50vw, 95vw"}
+                  class="absolute inset-0 h-full w-full object-cover transition-all duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
 
@@ -141,10 +141,10 @@ import { fotosGaleria as trabajos, categoriasGaleria as categorias } from '../da
         <div>
           <p class="text-xs sm:text-sm font-bold text-white flex items-center gap-2">
             <span>Soluciones de electromovilidad</span>
-            <span class="rounded bg-naranjo-400/20 px-2 py-0.5 text-[10px] font-bold text-naranjo-400">10 Imágenes</span>
+            <span class="rounded bg-naranjo-400/20 px-2 py-0.5 text-[10px] font-bold text-naranjo-400">{cantidadFotosInstalaciones} fotografías</span>
           </p>
           <p class="text-xs text-humo-200/70 mt-0.5">
-            Imágenes referenciales de cargadores, canalizaciones, conexiones y protecciones eléctricas.
+            Revisa todas las fotografías de nuestras instalaciones en la galería completa.
           </p>
         </div>
       </div>
